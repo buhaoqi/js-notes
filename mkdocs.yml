@@ -1,5 +1,5 @@
 # Project information
-site_name: My JavaScript Reference
+site_name: JavaScript Notes
 site_url: "https://github.io/buhaoqi/js-notes"
 site_author: buhaoqi
 site_description: >-
@@ -126,8 +126,14 @@ nav:
     - RegExp: ecmascript/object-regexp.md
     - Promise: ecmascript/object-promise.md
     - Error: ecmascript/object-error.md
+    - ECMAScript 2015: ecmascript/es2015.md
+    - ECMAScript 2016: ecmascript/es2016.md
+    - ECMAScript 2017: ecmascript/es2017.md
+    - ECMAScript 2018: ecmascript/es2018.md
   - APIs:
     - BOM: apis/bom.md
     - DOM: apis/dom.md
     - Event: apis/event.md
     - AJAX: apis/ajax.md
+    - Storage: apis/storage.md
+    - Web-related Terms: apis/web-related-terms.md
