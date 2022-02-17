@@ -12,8 +12,6 @@
         <meta name="author" content="buhaoqi">
       
       
-        <link rel="canonical" href="https://github.io/buhaoqi/js-notes/ecmascript/es2015/">
-      
       <link rel="icon" href="../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
     
@@ -592,8 +590,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#class-keyword" class="md-nav__link">
-    class keyword
+  <a href="#class" class="md-nav__link">
+    Class
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class_1" class="md-nav__link">
+    Class的继承
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prototype" class="md-nav__link">
+    prototype
   </a>
   
 </li>
@@ -602,48 +614,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../es2016/" class="md-nav__link">
-        ECMAScript 2016
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../es2017/" class="md-nav__link">
-        ECMAScript 2017
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../es2018.md" class="md-nav__link">
-        ECMAScript 2018
-      </a>
     </li>
   
 
@@ -819,8 +789,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#class-keyword" class="md-nav__link">
-    class keyword
+  <a href="#class" class="md-nav__link">
+    Class
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class_1" class="md-nav__link">
+    Class的继承
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prototype" class="md-nav__link">
+    prototype
   </a>
   
 </li>
@@ -939,7 +923,7 @@ ES6：增强的对象直接量写法</p>
 <span class="c1">//use prototype model</span>
 <span class="c1">//use class keyword</span>
 </code></pre></div></p>
-<h2 id="class-keyword">class keyword<a class="headerlink" href="#class-keyword" title="Permanent link">&para;</a></h2>
+<h2 id="class">Class<a class="headerlink" href="#class" title="Permanent link">&para;</a></h2>
 <ul>
 <li>class keyword用于创建一个类/构造函数的模板。</li>
 <li>A JavaScript class is not an object. </li>
@@ -994,11 +978,13 @@ ES6：增强的对象直接量写法</p>
 <span class="kd">const</span> <span class="nx">user2</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">User</span><span class="p">(</span><span class="s1">&#39;xiaogang&#39;</span><span class="p">,</span><span class="s1">&#39;xiaogang@qq.com&#39;</span><span class="p">)</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user1</span><span class="p">,</span><span class="nx">user2</span><span class="p">)</span>
-<span class="nx">user1</span><span class="p">.</span><span class="nx">login</span><span class="p">()</span>
-<span class="nx">user1</span><span class="p">.</span><span class="nx">incScore</span><span class="p">()</span>
-<span class="nx">user1</span><span class="p">.</span><span class="nx">incScore</span><span class="p">()</span>
-<span class="nx">user1</span><span class="p">.</span><span class="nx">incScore</span><span class="p">()</span>
-<span class="nx">user1</span><span class="p">.</span><span class="nx">logout</span><span class="p">()</span>
+<span class="c1">// user1.login()</span>
+<span class="c1">// user1.incScore()</span>
+<span class="c1">// user1.incScore()</span>
+<span class="c1">// user1.incScore()</span>
+<span class="c1">// user1.logout()</span>
+<span class="c1">//方法链</span>
+<span class="nx">user1</span><span class="p">.</span><span class="nx">login</span><span class="p">().</span><span class="nx">incScore</span><span class="p">().</span><span class="nx">incSore</span><span class="p">().</span><span class="nx">incSore</span><span class="p">().</span><span class="nx">logout</span><span class="p">()</span>
 </code></pre></div></p>
 <p>示例：创建一个汽车类：
 <div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nx">Car</span> <span class="p">{</span>
@@ -1016,6 +1002,54 @@ ES6：增强的对象直接量写法</p>
 <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span>
 <span class="s2">&quot;My car is &quot;</span> <span class="o">+</span> <span class="nx">myCar</span><span class="p">.</span><span class="nx">age</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; years old.&quot;</span><span class="p">;</span>
 </code></pre></div></p>
+<h2 id="class_1">Class的继承<a class="headerlink" href="#class_1" title="Permanent link">&para;</a></h2>
+<p>使用<code>extends</code>关键词创建class继承。
+使用class继承创建的class会继承父类中所有的属性和方法。</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nx">User</span> <span class="p">{</span>
+    <span class="kr">constructor</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span><span class="nx">email</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">username</span> <span class="o">=</span> <span class="nx">username</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">email</span> <span class="o">=</span> <span class="nx">email</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">score</span> <span class="o">=</span> <span class="mf">0</span>
+    <span class="p">}</span>
+    <span class="nx">login</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">username</span><span class="si">}</span><span class="sb">已登录`</span><span class="p">)</span>
+        <span class="k">return</span> <span class="k">this</span>
+    <span class="p">}</span>
+    <span class="nx">logout</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">username</span><span class="si">}</span><span class="sb">已注销`</span><span class="p">)</span>
+        <span class="k">return</span> <span class="k">this</span>
+    <span class="p">}</span>
+    <span class="nx">incScore</span><span class="p">(){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">score</span> <span class="o">+=</span> <span class="mf">1</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">username</span><span class="si">}</span><span class="sb">的得分：</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">score</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+        <span class="k">return</span> <span class="k">this</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Admin</span> <span class="k">extends</span> <span class="nx">User</span><span class="p">{</span>
+    <span class="kr">constructor</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span><span class="nx">email</span><span class="p">,</span><span class="nx">title</span><span class="p">){</span>
+        <span class="k">super</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span><span class="nx">email</span><span class="p">)</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">title</span>
+    <span class="p">}</span>
+    <span class="nx">delUser</span><span class="p">(</span><span class="nx">user</span><span class="p">){</span>
+        <span class="nx">users</span> <span class="o">=</span> <span class="nx">users</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span> <span class="nx">u</span> <span class="p">=&gt;</span> <span class="nx">u</span><span class="p">.</span><span class="nx">username</span> <span class="o">!==</span> <span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">user1</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">User</span><span class="p">(</span><span class="s1">&#39;xiaohong&#39;</span><span class="p">,</span><span class="s1">&#39;xiaohong@qq.com&#39;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">user2</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">User</span><span class="p">(</span><span class="s1">&#39;xiaogang&#39;</span><span class="p">,</span><span class="s1">&#39;xiaogang@qq.com&#39;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">user3</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Admin</span><span class="p">(</span><span class="s1">&#39;zj&#39;</span><span class="p">,</span><span class="s1">&#39;535414656@qq.com&#39;</span><span class="p">,</span><span class="s1">&#39;This is a title&#39;</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user1</span><span class="p">,</span><span class="nx">user2</span><span class="p">,</span><span class="nx">user3</span><span class="p">)</span>
+
+<span class="kd">let</span> <span class="nx">users</span> <span class="o">=</span> <span class="p">[</span> <span class="nx">user1</span><span class="p">,</span><span class="nx">user2</span><span class="p">,</span><span class="nx">user3</span><span class="p">]</span>
+<span class="nx">user3</span><span class="p">.</span><span class="nx">delUser</span><span class="p">(</span><span class="nx">user2</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">users</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="prototype">prototype<a class="headerlink" href="#prototype" title="Permanent link">&para;</a></h2>
+<ul>
+<li>js中的每一个对象都有一个原型。</li>
+<li>原型包含那个对象类型的所有方法。</li>
+</ul>
 
               
             </article>
@@ -1045,13 +1079,13 @@ ES6：增强的对象直接量写法</p>
       
       
         
-        <a href="../es2016/" class="md-footer__link md-footer__link--next" aria-label="下一页: ECMAScript 2016" rel="next">
+        <a href="../../apis/bom/" class="md-footer__link md-footer__link--next" aria-label="下一页: BOM" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              ECMAScript 2016
+              BOM
             </div>
           </div>
           <div class="md-footer__button md-icon">
