@@ -1,132 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/apis/ajax/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/apis/bom/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/apis/dom/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/apis/event/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/apis/storage/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/apis/web-related-terms/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/2018/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/data-type/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/es2015/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/es2016/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/es2017/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/expression/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/lexical/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/object-array/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/object-boolean/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/object-date/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/object-error/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/object-function/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/object-math/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/object-number/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/object-object/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/object-promise/</loc>
-         <lastmod>2022-02-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/object-regexp/</loc>
-         <lastmod>2022-02-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/object-string/</loc>
-         <lastmod>2022-02-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.io/buhaoqi/js-notes/ecmascript/syntax/</loc>
+         <loc>None</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
