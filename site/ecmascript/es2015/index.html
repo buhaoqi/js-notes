@@ -610,6 +610,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#app" class="md-nav__link">
+    天气app
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -805,6 +812,13 @@
         <li class="md-nav__item">
   <a href="#prototype" class="md-nav__link">
     prototype
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app" class="md-nav__link">
+    天气app
   </a>
   
 </li>
@@ -1050,6 +1064,32 @@ ES6：增强的对象直接量写法</p>
 <li>js中的每一个对象都有一个原型。</li>
 <li>原型包含那个对象类型的所有方法。</li>
 </ul>
+<h2 id="app">天气app<a class="headerlink" href="#app" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nx">Forecast</span> <span class="p">{</span>
+  <span class="kr">constructor</span><span class="p">(){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">key</span> <span class="o">=</span> <span class="s1">&#39;xvpOBAAypFh84YftzPvUCh8ZM80gbYIG&#39;</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">weatherURI</span> <span class="o">=</span> <span class="s1">&#39;http://dataservice.accuweather.com/currentconditions/v1/&#39;</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">cityURI</span> <span class="o">=</span> <span class="s1">&#39;http://dataservice.accuweather.com/locations/v1/cities/search&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">async</span> <span class="nx">updateCity</span><span class="p">(</span><span class="nx">city</span><span class="p">){</span>
+    <span class="kd">const</span> <span class="nx">cityDets</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">getCity</span><span class="p">(</span><span class="nx">city</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">weather</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">getWeather</span><span class="p">(</span><span class="nx">cityDets</span><span class="p">.</span><span class="nx">Key</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">{</span> <span class="nx">cityDets</span><span class="p">,</span> <span class="nx">weather</span> <span class="p">};</span>
+  <span class="p">}</span>
+  <span class="k">async</span> <span class="nx">getWeather</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+    <span class="kd">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="sb">`</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">?apikey=</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">key</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">weatherURI</span> <span class="o">+</span> <span class="nx">query</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nx">data</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+  <span class="p">}</span>
+  <span class="k">async</span> <span class="nx">getCity</span><span class="p">(</span><span class="nx">city</span><span class="p">){</span>
+    <span class="kd">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="sb">`?apikey=</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">key</span><span class="si">}</span><span class="sb">&amp;q=</span><span class="si">${</span><span class="nx">city</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">cityURI</span> <span class="o">+</span> <span class="nx">query</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nx">data</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
               
             </article>
