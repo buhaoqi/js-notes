@@ -874,8 +874,160 @@ function fnUp() {
     document.onmousemove = document.onmouseup = null
 }
 ```
+## 案例：多个选项卡
 
+```html
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tabs{
+            border:1px solid red;
+            width:300px;
+            height:200px;
+            position:relative;
+        }
+        .tab{
+            border:none;
+            outline: none;
+            width:100px;
+            height:40px;
+            float:left;
+        }
+        .tab-content{
+            height:calc(100% - 40px);
+            position:absolute;
+            left:0;
+            top:40px;
+            display: none;
+            width:100%;
+        }
+        .tab-content:nth-child(2){
+            background-color:pink;
+            display: block;
+        }
+        .tab-content:nth-child(3){
+            background-color:lightblue;
+        }
+        .tab-content:nth-child(4){
+            background-color:lightgreen;
+        }
+        .active{
+            background-color: gold;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            const tab1 = new Tab('#tabs1')
+            tab1.init()
+            const tab2 = new Tab('#tabs2')
+            tab2.init()
+        }
+        function Tab(id){
+            this.container = document.querySelector(id)
+            this.tabs = this.container.querySelectorAll('.tab')
+            this.contents = this.container.querySelectorAll('.tab-content')
+            this.last = this.tabs[0]
+            this.num = 0
+        }
+        Tab.prototype.init = function(){
+            let This = this
+            for(let i=0;i<this.tabs.length;i++){
+                this.tabs[i].index = i
+                this.tabs[i].onclick = function(){
+                    This.switchTab(this)
+                }
+            }
+        }
+        Tab.prototype.switchTab = function(obj){
+            this.last.classList.remove('active')
+            this.contents[this.last.index].style.display = 'none'
+            obj.classList.add('active')
+            this.contents[obj.index].style.display = 'block'
+            this.last = obj
+        }
+    </script>
+</head>
+<body>
+    <div class="tabs" id="tabs1">
+        <div class="tab-container">
+            <button class="tab active">Tab1</button>
+            <button class="tab">Tab2</button>
+            <button class="tab">Tab3</button>
+        </div>
+        <div class="tab-content">Tab1 Content</div>
+        <div class="tab-content">Tab2 Content</div>
+        <div class="tab-content">Tab3 Content</div>
+    </div>
 
+    <div class="tabs" id="tabs2">
+        <div class="tab-container">
+            <button class="tab active">Tab1</button>
+            <button class="tab">Tab2</button>
+            <button class="tab">Tab3</button>
+        </div>
+        <div class="tab-content">Tab1 Content</div>
+        <div class="tab-content">Tab2 Content</div>
+        <div class="tab-content">Tab3 Content</div>
+    </div>
+</body>
+</html>
+```
+## 案例：选项卡自动播放
+
+```javascript
+window.onload = function(){
+    const tab1 = new Tab('#tabs1')
+    const tab2 = new Tab('#tabs2')
+    tab1.init()
+    tab2.init()
+    tab2.autoPlay()
+}
+function Tab(id){
+    this.container = document.querySelector(id)
+    this.tabs = this.container.querySelectorAll('.tab')
+    this.contents = this.container.querySelectorAll('.tab-content')
+    this.last = this.tabs[0]
+    this.num = 0
+}
+Tab.prototype.init = function(){
+    let This = this
+    for(let i=0;i<this.tabs.length;i++){
+        this.tabs[i].index = i
+        this.tabs[i].onclick = function(){
+            This.switchTab(this)
+        }
+    }
+}
+Tab.prototype.switchTab = function(obj){
+    this.last.classList.remove('active')
+    this.contents[this.last.index].style.display = 'none'
+    obj.classList.add('active')
+    this.contents[obj.index].style.display = 'block'
+    this.last = obj
+}
+Tab.prototype.autoPlay = function(obj){
+    let This = this
+    setInterval(function(){
+        if(This.num == 0){
+            This.tabs[This.tabs.length-1].classList.remove('active')
+            This.contents[This.tabs.length-1].style.display = 'none'
+        } else {
+            This.tabs[This.num-1].classList.remove('active')
+            This.contents[This.num-1].style.display = 'none'
+        }
+        This.tabs[This.num].classList.add('active')
+        This.contents[This.num].style.display = 'block'
+        This.num++
+        if(This.num == This.tabs.length){
+            This.num = 0
+        }
+    },1000)
+}
+```
 
 ## 案例：拖拽OOP
 
@@ -974,3 +1126,6 @@ console.log(str.number)//undefined
 字符串既然不是对象，为什么会有属性呢？
 
 只要引用了字符串的属性，js就会将字符串值通过调用new String(s)的方式转换成对象，这个对象继承了字符串的方法和属性，一旦属性引用结束，这个新建的对象就会被销毁。
+
+
+git config --global --unset https.proxy
