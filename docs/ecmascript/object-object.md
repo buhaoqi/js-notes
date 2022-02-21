@@ -798,3 +798,179 @@ Tab.prototype.switchTab = function(obj){
     this.last = obj
 }
 ```
+
+## 案例：拖拽传统
+
+```html
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+window.onload = function(){
+    const div = document.querySelector('.box')
+    let x = y = 0
+    div.onmousedown = function(ev){
+        x = ev.clientX - div.offsetLeft
+        y = ev.clientY - div.offsetTop
+        document.onmousemove = function(ev){
+            div.style.left = ev.clientX - x + 'px'
+            div.style.top = ev.clientY - y + 'px'
+        }
+        document.onmouseup = function(){
+            document.onmousemove = document.onmouseup = null
+        }
+        return false
+    }
+}
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+
+```
+
+## 案例：改造拖拽
+
+```javascript
+let div = null
+let x = 0
+let y = 0
+window.onload = function () {
+    div = document.querySelector('.box')
+    init( )
+}
+function init(){
+    div.onmousedown = fnDown
+}
+function fnDown(ev) {
+    x = ev.clientX - div.offsetLeft
+    y = ev.clientY - div.offsetTop
+    document.onmousemove = fnMove
+    document.onmouseup = fnUp
+    return false
+}
+function fnMove(ev) {
+    div.style.left = ev.clientX - x + 'px'
+    div.style.top = ev.clientY - y + 'px'
+}
+function fnUp() {
+    document.onmousemove = document.onmouseup = null
+}
+```
+
+
+
+## 案例：拖拽OOP
+
+```javascript
+window.onload = function(){
+    const d1 = new Drag('#box1')
+    d1.init()
+    const d2 = new Drag('#box2')
+    d2.init()
+}
+function Drag(id){
+    this.div = document.querySelector(id)
+    this.x = 0
+    this.y = 0
+}
+Drag.prototype.init = function(){
+    let This = this
+    this.div.onmousedown = function(ev){
+        This.fnDown(ev)
+    }
+}
+Drag.prototype.fnDown = function(ev){
+    this.x = ev.clientX - this.div.offsetLeft
+    this.y = ev.clientY - this.div.offsetTop
+    let This = this
+    document.onmousemove = function(ev){
+        This.fnMove(ev)
+    }
+    document.onmouseup = function(ev){
+        This.fnUp(ev)
+    }
+    return false
+}
+Drag.prototype.fnMove = function(ev){
+    this.div.style.left = ev.clientX - this.x + 'px'
+    this.div.style.top = ev.clientY - this. y + 'px'
+}
+Drag.prototype.fnUp = function(ev){
+    document.onmousemove = document.onmouseup = null
+}
+```
+
+## 不要修改系统对象
+
+```javascript
+//不要修改系统对象下面的属性和方法，但是可以锻炼系统方法的写法
+const arr = [1,2,3]
+Array.prototype.push = function(){
+    for(let i=0;i<arguments.length;i++){
+        arr[this.length] = arguments[i]
+    }
+    return this.length
+}
+arr.push(4,5,6)
+console.log(arr)
+```
+
+## 包装对象
+
+思考：字符串为什么会有方法
+
+```javascript
+const str = 'hello world'
+console.log(typeof str)
+const r = str.charAt(0)
+console.log(r)
+const r2 = str.indexOf('e')
+console.log(r2)
+```
+
+所有的基本数据类型都有自己的包装对象。
+
+字符串类型
+```javascript
+const str = new String('hello world')
+console.log(typeof str) // object
+
+String.prototype.charAt = function(){
+    //code
+}
+
+//返回最后一个字符的方法
+String.prototype.lastChar = function(){
+    return this.charAt(this.length - 1)
+}
+
+```
+
+包装对象被销毁
+
+```javascript
+let str1 = 'aaa'
+str1.number = 10
+console.log(str.number)//undefined
+```
+字符串既然不是对象，为什么会有属性呢？
+
+只要引用了字符串的属性，js就会将字符串值通过调用new String(s)的方式转换成对象，这个对象继承了字符串的方法和属性，一旦属性引用结束，这个新建的对象就会被销毁。
