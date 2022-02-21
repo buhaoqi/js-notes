@@ -116,6 +116,7 @@ nav:
     - 句法: ecmascript/syntax.md
     - 数据类型: ecmascript/data-type.md
     - Object: ecmascript/object-object.md
+    - this: ecmascript/this.md
     - Function: ecmascript/object-function.md
     - Number: ecmascript/object-number.md
     - String: ecmascript/object-string.md
