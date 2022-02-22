@@ -422,10 +422,6 @@ let y = new String('hello')
 console.log(x==y,x===y) // false false
 ```
 
-
-
-
-
 数值
 
 通常，数值被创建为原始值
@@ -798,82 +794,6 @@ Tab.prototype.switchTab = function(obj){
     this.last = obj
 }
 ```
-
-## 案例：拖拽传统
-
-```html
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        .box {
-            width: 100px;
-            height: 100px;
-            background-color: red;
-            position: absolute;
-        }
-    </style>
-    <script>
-window.onload = function(){
-    const div = document.querySelector('.box')
-    let x = y = 0
-    div.onmousedown = function(ev){
-        x = ev.clientX - div.offsetLeft
-        y = ev.clientY - div.offsetTop
-        document.onmousemove = function(ev){
-            div.style.left = ev.clientX - x + 'px'
-            div.style.top = ev.clientY - y + 'px'
-        }
-        document.onmouseup = function(){
-            document.onmousemove = document.onmouseup = null
-        }
-        return false
-    }
-}
-    </script>
-</head>
-<body>
-    <div class="box"></div>
-</body>
-</html>
-
-```
-
-## 案例：改造拖拽
-
-```javascript
-let div = null
-let x = 0
-let y = 0
-window.onload = function () {
-    div = document.querySelector('.box')
-    init( )
-}
-function init(){
-    div.onmousedown = fnDown
-}
-function fnDown(ev) {
-    x = ev.clientX - div.offsetLeft
-    y = ev.clientY - div.offsetTop
-    document.onmousemove = fnMove
-    document.onmouseup = fnUp
-    return false
-}
-function fnMove(ev) {
-    div.style.left = ev.clientX - x + 'px'
-    div.style.top = ev.clientY - y + 'px'
-}
-function fnUp() {
-    document.onmousemove = document.onmouseup = null
-}
-```
 ## 案例：多个选项卡
 
 ```html
@@ -1028,6 +948,82 @@ Tab.prototype.autoPlay = function(obj){
     },1000)
 }
 ```
+## 案例：拖拽传统
+
+```html
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+window.onload = function(){
+    const div = document.querySelector('.box')
+    let x = y = 0
+    div.onmousedown = function(ev){
+        x = ev.clientX - div.offsetLeft
+        y = ev.clientY - div.offsetTop
+        document.onmousemove = function(ev){
+            div.style.left = ev.clientX - x + 'px'
+            div.style.top = ev.clientY - y + 'px'
+        }
+        document.onmouseup = function(){
+            document.onmousemove = document.onmouseup = null
+        }
+        return false
+    }
+}
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+
+```
+
+## 案例：改造拖拽
+
+```javascript
+let div = null
+let x = 0
+let y = 0
+window.onload = function () {
+    div = document.querySelector('.box')
+    init( )
+}
+function init(){
+    div.onmousedown = fnDown
+}
+function fnDown(ev) {
+    x = ev.clientX - div.offsetLeft
+    y = ev.clientY - div.offsetTop
+    document.onmousemove = fnMove
+    document.onmouseup = fnUp
+    return false
+}
+function fnMove(ev) {
+    div.style.left = ev.clientX - x + 'px'
+    div.style.top = ev.clientY - y + 'px'
+}
+function fnUp() {
+    document.onmousemove = document.onmouseup = null
+}
+```
+
 
 ## 案例：拖拽OOP
 
@@ -1129,3 +1125,125 @@ console.log(str.number)//undefined
 
 
 git config --global --unset https.proxy
+
+案例：OOP书籍列表
+
+HTML+CSS
+
+```html
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>添加书籍</h1>
+        <form class="book-form" id="book-form">
+            <div>
+                <label for="title">标题</label>
+                <input type="text" id="title" class="">
+            </div>
+            <div>
+                <label for="author">作者</label>
+                <input type="text" id="author" class="">
+            </div>
+            <div>
+                <label for="isbn">ISBN</label>
+                <input type="text" id="isbn" class="">
+            </div>
+            <div>
+                <input type="submit" value="提交">
+            </div>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>书籍</th>
+                    <th>作者</th>
+                    <th>ISBN</th>
+                    <th>备注</th>
+                </tr>
+            </thead>
+            <tbody class="book-list"></tbody>
+        </table>
+    </div>
+    <script src="6-app.js"></script>
+</body>
+</html>
+```
+
+app.js
+
+```javascript
+//创建Book构造函数
+const Book = function(title,author,isbn){
+    this.title = title
+    this.author = author
+    this.isbn = isbn
+}
+//创建UI构造函数
+const UI = function(){}
+UI.prototype.addBookToList = function(book){
+    const list = document.querySelector('.book-list')
+    const row = document.createElement('tr')
+    row.innerHTML = `
+        <td>${book.title}</td>
+        <td>${book.author}</td>
+        <td>${book.isbn}</td>
+        <td><a href='' class='delete'>删除</a></td>
+    `
+    list.appendChild(row)
+}
+UI.prototype.showAlert = function(message,className){
+    const div = document.createElement('div')
+    div.className = `alert ${className}`
+    div.appendChild(document.createTextNode(message))
+    const container = document.querySelector('#container')
+    const form = container.querySelector('#book-form')
+    container.insertBefore(div,form)
+    setTimeout(function(){
+        document.querySelector('.alert').remove()
+    },3000)
+}
+UI.prototype.deleteBook = function(target){
+    if(target.className = 'delete'){
+        target.parentElement.parentElement.remove()
+    }
+}
+UI.prototype.clearFields = function(){
+    document.querySelector('#title').value = ''
+    document.querySelector('#author').value = ''
+    document.querySelector('#isbn').value = ''
+}
+
+//form event listening
+const bookForm = document.querySelector('#book-form')
+bookForm.addEventListener('submit',function(e){
+    //Get form value
+    const title = document.querySelector('#title').value
+    const author = document.querySelector('#author').value
+    const isbn = document.querySelector('#isbn').value
+    //validate
+    const book = new Book(title,author,isbn)//instantiate book
+    const ui = new UI()//instantiate UI
+    if(title =='' || author == ''||isbn==''){
+        ui.showAlert('请不要留空','error')
+    } else {
+        ui.addBookToList(book)//添加到dom
+        ui.showAlert('书籍已添加','success')//
+        ui.clearFields()//
+    }
+    e.preventDefault()
+})
+//click event listening
+const bookList = document.querySelector('.book-list')
+bookList.addEventListener('click',function(e){
+    const ui = new UI()
+    ui.deleteBook(e.target)
+    ui.showAlert('书籍已删除','success')
+    e.preventDefault()
+})
+```
