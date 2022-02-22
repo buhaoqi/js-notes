@@ -570,28 +570,28 @@
       
         <li class="md-nav__item">
   <a href="#_18" class="md-nav__link">
-    案例：拖拽传统
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
-    案例：改造拖拽
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
     案例：多个选项卡
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     案例：选项卡自动播放
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    案例：拖拽传统
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    案例：改造拖拽
   </a>
   
 </li>
@@ -1098,28 +1098,28 @@
       
         <li class="md-nav__item">
   <a href="#_18" class="md-nav__link">
-    案例：拖拽传统
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
-    案例：改造拖拽
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
     案例：多个选项卡
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     案例：选项卡自动播放
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    案例：拖拽传统
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    案例：改造拖拽
   </a>
   
 </li>
@@ -1839,76 +1839,7 @@ function和getters的区别</p>
     <span class="k">this</span><span class="p">.</span><span class="nx">last</span> <span class="o">=</span> <span class="nx">obj</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="_18">案例：拖拽传统<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
-<span class="w">        </span><span class="o">*</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="nc">box</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
-    <span class="kd">const</span> <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.box&#39;</span><span class="p">)</span>
-    <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">=</span> <span class="mf">0</span>
-    <span class="nx">div</span><span class="p">.</span><span class="nx">onmousedown</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
-        <span class="nx">x</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">clientX</span> <span class="o">-</span> <span class="nx">div</span><span class="p">.</span><span class="nx">offsetLeft</span>
-        <span class="nx">y</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">clientY</span> <span class="o">-</span> <span class="nx">div</span><span class="p">.</span><span class="nx">offsetTop</span>
-        <span class="nb">document</span><span class="p">.</span><span class="nx">onmousemove</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
-            <span class="nx">div</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">clientX</span> <span class="o">-</span> <span class="nx">x</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span>
-            <span class="nx">div</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">top</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">clientY</span> <span class="o">-</span> <span class="nx">y</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span>
-        <span class="p">}</span>
-        <span class="nb">document</span><span class="p">.</span><span class="nx">onmouseup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
-            <span class="nb">document</span><span class="p">.</span><span class="nx">onmousemove</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">onmouseup</span> <span class="o">=</span> <span class="kc">null</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="kc">false</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;box&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div>
-<h2 id="_19">案例：改造拖拽<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">div</span> <span class="o">=</span> <span class="kc">null</span>
-<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mf">0</span>
-<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mf">0</span>
-<span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.box&#39;</span><span class="p">)</span>
-    <span class="nx">init</span><span class="p">(</span> <span class="p">)</span>
-<span class="p">}</span>
-<span class="kd">function</span> <span class="nx">init</span><span class="p">(){</span>
-    <span class="nx">div</span><span class="p">.</span><span class="nx">onmousedown</span> <span class="o">=</span> <span class="nx">fnDown</span>
-<span class="p">}</span>
-<span class="kd">function</span> <span class="nx">fnDown</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">x</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">clientX</span> <span class="o">-</span> <span class="nx">div</span><span class="p">.</span><span class="nx">offsetLeft</span>
-    <span class="nx">y</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">clientY</span> <span class="o">-</span> <span class="nx">div</span><span class="p">.</span><span class="nx">offsetTop</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">onmousemove</span> <span class="o">=</span> <span class="nx">fnMove</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">onmouseup</span> <span class="o">=</span> <span class="nx">fnUp</span>
-    <span class="k">return</span> <span class="kc">false</span>
-<span class="p">}</span>
-<span class="kd">function</span> <span class="nx">fnMove</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">div</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">clientX</span> <span class="o">-</span> <span class="nx">x</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span>
-    <span class="nx">div</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">top</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">clientY</span> <span class="o">-</span> <span class="nx">y</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span>
-<span class="p">}</span>
-<span class="kd">function</span> <span class="nx">fnUp</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">onmousemove</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">onmouseup</span> <span class="o">=</span> <span class="kc">null</span>
-<span class="p">}</span>
-</code></pre></div>
-<h2 id="_20">案例：多个选项卡<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<h2 id="_18">案例：多个选项卡<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
@@ -2008,7 +1939,7 @@ function和getters的区别</p>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<h2 id="_21">案例：选项卡自动播放<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<h2 id="_19">案例：选项卡自动播放<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
     <span class="kd">const</span> <span class="nx">tab1</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Tab</span><span class="p">(</span><span class="s1">&#39;#tabs1&#39;</span><span class="p">)</span>
     <span class="kd">const</span> <span class="nx">tab2</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Tab</span><span class="p">(</span><span class="s1">&#39;#tabs2&#39;</span><span class="p">)</span>
@@ -2056,6 +1987,75 @@ function和getters的区别</p>
             <span class="nx">This</span><span class="p">.</span><span class="nx">num</span> <span class="o">=</span> <span class="mf">0</span>
         <span class="p">}</span>
     <span class="p">},</span><span class="mf">1000</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="_20">案例：拖拽传统<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="o">*</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="nc">box</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">const</span> <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.box&#39;</span><span class="p">)</span>
+    <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">=</span> <span class="mf">0</span>
+    <span class="nx">div</span><span class="p">.</span><span class="nx">onmousedown</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+        <span class="nx">x</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">clientX</span> <span class="o">-</span> <span class="nx">div</span><span class="p">.</span><span class="nx">offsetLeft</span>
+        <span class="nx">y</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">clientY</span> <span class="o">-</span> <span class="nx">div</span><span class="p">.</span><span class="nx">offsetTop</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">onmousemove</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+            <span class="nx">div</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">clientX</span> <span class="o">-</span> <span class="nx">x</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span>
+            <span class="nx">div</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">top</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">clientY</span> <span class="o">-</span> <span class="nx">y</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span>
+        <span class="p">}</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">onmouseup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">onmousemove</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">onmouseup</span> <span class="o">=</span> <span class="kc">null</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;box&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="_21">案例：改造拖拽<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">div</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mf">0</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mf">0</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.box&#39;</span><span class="p">)</span>
+    <span class="nx">init</span><span class="p">(</span> <span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">init</span><span class="p">(){</span>
+    <span class="nx">div</span><span class="p">.</span><span class="nx">onmousedown</span> <span class="o">=</span> <span class="nx">fnDown</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">fnDown</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">x</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">clientX</span> <span class="o">-</span> <span class="nx">div</span><span class="p">.</span><span class="nx">offsetLeft</span>
+    <span class="nx">y</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">clientY</span> <span class="o">-</span> <span class="nx">div</span><span class="p">.</span><span class="nx">offsetTop</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">onmousemove</span> <span class="o">=</span> <span class="nx">fnMove</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">onmouseup</span> <span class="o">=</span> <span class="nx">fnUp</span>
+    <span class="k">return</span> <span class="kc">false</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">fnMove</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">div</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">clientX</span> <span class="o">-</span> <span class="nx">x</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span>
+    <span class="nx">div</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">top</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">clientY</span> <span class="o">-</span> <span class="nx">y</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">fnUp</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">onmousemove</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">onmouseup</span> <span class="o">=</span> <span class="kc">null</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="oop_2">案例：拖拽OOP<a class="headerlink" href="#oop_2" title="Permanent link">&para;</a></h2>
@@ -2139,6 +2139,121 @@ function和getters的区别</p>
 字符串既然不是对象，为什么会有属性呢？</p>
 <p>只要引用了字符串的属性，js就会将字符串值通过调用new String(s)的方式转换成对象，这个对象继承了字符串的方法和属性，一旦属性引用结束，这个新建的对象就会被销毁。</p>
 <p>git config --global --unset https.proxy</p>
+<p>案例：OOP书籍列表</p>
+<p>HTML+CSS</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>添加书籍<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">form</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;book-form&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;book-form&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;title&quot;</span><span class="p">&gt;</span>标题<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;title&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;author&quot;</span><span class="p">&gt;</span>作者<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;author&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;isbn&quot;</span><span class="p">&gt;</span>ISBN<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;isbn&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;提交&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>书籍<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>作者<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>ISBN<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>备注<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">tbody</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;book-list&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;6-app.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>app.js</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//创建Book构造函数</span>
+<span class="kd">const</span> <span class="nx">Book</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span><span class="nx">author</span><span class="p">,</span><span class="nx">isbn</span><span class="p">){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">title</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">author</span> <span class="o">=</span> <span class="nx">author</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">isbn</span> <span class="o">=</span> <span class="nx">isbn</span>
+<span class="p">}</span>
+<span class="c1">//创建UI构造函数</span>
+<span class="kd">const</span> <span class="nx">UI</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){}</span>
+<span class="nx">UI</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">addBookToList</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">book</span><span class="p">){</span>
+    <span class="kd">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.book-list&#39;</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">row</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">)</span>
+    <span class="nx">row</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`</span>
+<span class="sb">        &lt;td&gt;</span><span class="si">${</span><span class="nx">book</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb">&lt;/td&gt;</span>
+<span class="sb">        &lt;td&gt;</span><span class="si">${</span><span class="nx">book</span><span class="p">.</span><span class="nx">author</span><span class="si">}</span><span class="sb">&lt;/td&gt;</span>
+<span class="sb">        &lt;td&gt;</span><span class="si">${</span><span class="nx">book</span><span class="p">.</span><span class="nx">isbn</span><span class="si">}</span><span class="sb">&lt;/td&gt;</span>
+<span class="sb">        &lt;td&gt;&lt;a href=&#39;&#39; class=&#39;delete&#39;&gt;删除&lt;/a&gt;&lt;/td&gt;</span>
+<span class="sb">    `</span>
+    <span class="nx">list</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">row</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nx">UI</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">showAlert</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span><span class="nx">className</span><span class="p">){</span>
+    <span class="kd">const</span> <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">)</span>
+    <span class="nx">div</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="sb">`alert </span><span class="si">${</span><span class="nx">className</span><span class="si">}</span><span class="sb">`</span>
+    <span class="nx">div</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="nx">message</span><span class="p">))</span>
+    <span class="kd">const</span> <span class="nx">container</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#container&#39;</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">form</span> <span class="o">=</span> <span class="nx">container</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#book-form&#39;</span><span class="p">)</span>
+    <span class="nx">container</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">div</span><span class="p">,</span><span class="nx">form</span><span class="p">)</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.alert&#39;</span><span class="p">).</span><span class="nx">remove</span><span class="p">()</span>
+    <span class="p">},</span><span class="mf">3000</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nx">UI</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">deleteBook</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">target</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">&#39;delete&#39;</span><span class="p">){</span>
+        <span class="nx">target</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">.</span><span class="nx">remove</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">UI</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">clearFields</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#title&#39;</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#author&#39;</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#isbn&#39;</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="p">}</span>
+
+<span class="c1">//form event listening</span>
+<span class="kd">const</span> <span class="nx">bookForm</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#book-form&#39;</span><span class="p">)</span>
+<span class="nx">bookForm</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;submit&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="c1">//Get form value</span>
+    <span class="kd">const</span> <span class="nx">title</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#title&#39;</span><span class="p">).</span><span class="nx">value</span>
+    <span class="kd">const</span> <span class="nx">author</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#author&#39;</span><span class="p">).</span><span class="nx">value</span>
+    <span class="kd">const</span> <span class="nx">isbn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#isbn&#39;</span><span class="p">).</span><span class="nx">value</span>
+    <span class="c1">//validate</span>
+    <span class="kd">const</span> <span class="nx">book</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Book</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span><span class="nx">author</span><span class="p">,</span><span class="nx">isbn</span><span class="p">)</span><span class="c1">//instantiate book</span>
+    <span class="kd">const</span> <span class="nx">ui</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">UI</span><span class="p">()</span><span class="c1">//instantiate UI</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">title</span> <span class="o">==</span><span class="s1">&#39;&#39;</span> <span class="o">||</span> <span class="nx">author</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="o">||</span><span class="nx">isbn</span><span class="o">==</span><span class="s1">&#39;&#39;</span><span class="p">){</span>
+        <span class="nx">ui</span><span class="p">.</span><span class="nx">showAlert</span><span class="p">(</span><span class="s1">&#39;请不要留空&#39;</span><span class="p">,</span><span class="s1">&#39;error&#39;</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">ui</span><span class="p">.</span><span class="nx">addBookToList</span><span class="p">(</span><span class="nx">book</span><span class="p">)</span><span class="c1">//添加到dom</span>
+        <span class="nx">ui</span><span class="p">.</span><span class="nx">showAlert</span><span class="p">(</span><span class="s1">&#39;书籍已添加&#39;</span><span class="p">,</span><span class="s1">&#39;success&#39;</span><span class="p">)</span><span class="c1">//</span>
+        <span class="nx">ui</span><span class="p">.</span><span class="nx">clearFields</span><span class="p">()</span><span class="c1">//</span>
+    <span class="p">}</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span>
+<span class="p">})</span>
+<span class="c1">//click event listening</span>
+<span class="kd">const</span> <span class="nx">bookList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.book-list&#39;</span><span class="p">)</span>
+<span class="nx">bookList</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="kd">const</span> <span class="nx">ui</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">UI</span><span class="p">()</span>
+    <span class="nx">ui</span><span class="p">.</span><span class="nx">deleteBook</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">)</span>
+    <span class="nx">ui</span><span class="p">.</span><span class="nx">showAlert</span><span class="p">(</span><span class="s1">&#39;书籍已删除&#39;</span><span class="p">,</span><span class="s1">&#39;success&#39;</span><span class="p">)</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span>
+<span class="p">})</span>
+</code></pre></div>
 
               
             </article>
