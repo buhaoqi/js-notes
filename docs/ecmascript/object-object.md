@@ -1126,7 +1126,7 @@ console.log(str.number)//undefined
 
 git config --global --unset https.proxy
 
-案例：OOP书籍列表
+## 案例：OOP书籍列表
 
 HTML+CSS
 
@@ -1175,6 +1175,7 @@ HTML+CSS
 </html>
 ```
 
+## 案例：书籍列表
 app.js
 
 ```javascript
@@ -1246,4 +1247,107 @@ bookList.addEventListener('click',function(e){
     ui.showAlert('书籍已删除','success')
     e.preventDefault()
 })
+```
+
+## 案例：OOP测试题APP
+
+html部分：
+```html
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="quiz1"></div>
+    <div id="quiz2"></div>
+    <script src="app.js"></script>
+</body>
+</html>
+
+```
+js部分
+```javascript
+//Question构造函数
+function Question(title,answers,correctAnswer){
+    this.title = title
+    this.answers = answers
+    this.correctAnswer = correctAnswer
+}
+Question.prototype.isCorrectAnswer = function(myAnswer){
+    return myAnswer === this.correctAnswer
+}
+
+const questions = [
+        new Question('1下列哪一项不属于面向对象编程语言？',['Java','C#','C++','C'],'C'),
+        new Question('2下列哪一项不属于面向对象编程语言？',['Java','C#','C++','C'],'C'),
+        new Question('3下列哪一项不属于面向对象编程语言？',['Java','C#','C++','C'],'C'),
+        new Question('4下列哪一项不属于面向对象编程语言？',['Java','C#','C++','C'],'C'),
+        new Question('5下列哪一项不属于面向对象编程语言？',['Java','C#','C++','C'],'C'),
+        new Question('6下列哪一项不属于面向对象编程语言？',['Java','C#','C++','C'],'C'),
+        new Question('7下列哪一项不属于面向对象编程语言？',['Java','C#','C++','C'],'C'),
+    ]  
+
+//Quiz构造函数
+function Quiz(id,questions){
+    this.container = document.querySelector(id)
+    this.score = 0
+    this.questions = questions
+    this.questionIndex = 0
+}
+Quiz.prototype.getQuestion = function(){
+    return this.questions[this.questionIndex]
+}
+Quiz.prototype.createQuestion = function(i){
+    if(this.isEnded()){
+        this.showScore()
+    } else {
+        const p = document.createElement('p')
+        p.innerHTML = this.getQuestion().title
+        const ul = document.createElement('ul')
+        const answers = this.getQuestion().answers
+        for(let i=0;i<answers.length;i++){
+            const li = document.createElement('li')
+            li.innerHTML = answers[i]
+            let This = this
+            li.onclick = function(e){
+                This.countScore(e.target.innerText)
+                // This.questionIndex++
+                This.container.innerHTML = ''
+                This.createQuestion()
+            }
+            ul.appendChild(li)
+        }
+        this.container.appendChild(p)
+        this.container.appendChild(ul)
+    }
+    
+}
+
+Quiz.prototype.countScore = function(answer){
+    if(this.getQuestion().isCorrectAnswer(answer)){
+        this.score++
+    }
+    this.questionIndex++
+}
+
+Quiz.prototype.isEnded = function(){
+    return this.questions.length === this.questionIndex
+}
+
+Quiz.prototype.showScore = function(){
+    let gameOverHtml = `<h1>Result</h1>`
+    gameOverHtml += `<h2 id='score'>你的得分: ${this.score}</h2>`
+    const element = document.querySelector('#quiz1')
+    element.innerHTML = gameOverHtml
+}
+
+const quiz1 = new Quiz('#quiz1',questions)
+quiz1.createQuestion()
+
+const quiz2 = new Quiz('#quiz2',questions)
+quiz2.createQuestion()
+
 ```
