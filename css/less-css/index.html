@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#less" class="md-skip">
           跳转至
         </a>
       
@@ -829,8 +829,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    安装
+  <a href="#less" class="md-nav__link">
+    安装less
   </a>
   
 </li>
@@ -875,8 +875,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    安装
+  <a href="#less" class="md-nav__link">
+    安装less
   </a>
   
 </li>
@@ -896,10 +896,11 @@
 
   <h1>Less</h1>
 
-<h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="less">安装less<a class="headerlink" href="#less" title="Permanent link">&para;</a></h2>
 <p><div class="highlight"><pre><span></span><code>$ npm install -g less
-$ npm install -g less-watch-compiler
-$ mkdir less-basic
+</code></pre></div>
+手动编译less
+<div class="highlight"><pre><span></span><code>$ mkdir less-basic
 $ <span class="nb">cd</span> less-basic
 $ touch style.less <span class="c1">#less文件不能引入HTML文档，我们需要对它编译成常规css才可以</span>
 $ lessc styles.less <span class="c1"># less的编译器 编译到屏幕</span>
@@ -912,10 +913,13 @@ less文件：
 <span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="o">@</span><span class="k">background-color</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
-<p>自动监控编译
-<div class="highlight"><pre><span></span><code><span class="nt">less-watch-compiler</span><span class="w"> </span><span class="o">[</span><span class="nt">options</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="nt">source_dir</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="nt">destination_dir</span><span class="o">&gt;</span><span class="w"></span>
+<p>自动编译less
+<div class="highlight"><pre><span></span><code><span class="o">$</span><span class="w"> </span><span class="nt">npm</span><span class="w"> </span><span class="nt">install</span><span class="w"> </span><span class="nt">-g</span><span class="w"> </span><span class="nt">less-watch-compiler</span><span class="w"></span>
 
-<span class="nt">less-watch-compiler</span><span class="w"> </span><span class="nt">less</span><span class="w"> </span><span class="nt">css</span><span class="w"></span>
+<span class="o">$</span><span class="w"> </span><span class="nt">less-watch-compiler</span><span class="w"> </span><span class="o">[</span><span class="nt">options</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="nt">source_dir</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="nt">destination_dir</span><span class="o">&gt;</span><span class="w"></span>
+
+<span class="err">#</span><span class="w"> </span><span class="nt">自动监控文件夹</span><span class="w"></span>
+<span class="o">$</span><span class="w"> </span><span class="nt">less-watch-compiler</span><span class="w"> </span><span class="nt">less</span><span class="w"> </span><span class="nt">css</span><span class="w"></span>
 </code></pre></div></p>
 <p>配置文件
 <div class="highlight"><pre><span></span><code>$ touch less-watch-compiler.config.json
@@ -925,8 +929,29 @@ less文件：
     &quot;outputFolder&quot;: &quot;dist&quot;,
     &quot;mainFile&quot;: &quot;main.less&quot;
 }
-</code></pre></div>
-HTML</p>
+</code></pre></div></p>
+<p>使用方法：
+1. 嵌套
+2. &amp;符号 - 表示同级，如：伪类、多类
+3. 注释的写法： // 或 /* <em>/  区别：//不会被编译  /*</em>/会被编译
+4. @变量名  <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/width" title="GitHub User: width">@width</a>: 12;  width:<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/width" title="GitHub User: width">@width</a>:12 * 1px; || <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/width" title="GitHub User: width">@width</a>:12px
+HTML
+5. 变量名的组合：<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/width" title="GitHub User: width">@width</a>:1px; <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/style" title="GitHub User: style">@style</a>:solid; <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/color" title="GitHub User: color">@color</a>:red; <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/red" title="GitHub User: red">@red</a>:red; <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/blue" title="GitHub User: blue">@blue</a>:blue;
+.box{
+    border:<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/width" title="GitHub User: width">@width</a> <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/style" title="GitHub User: style">@style</a> <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/color" title="GitHub User: color">@color</a>;
+}
+6. 作用域：
+.box1{
+    <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/red" title="GitHub User: red">@red</a>:red;
+    .title{
+        color:<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/red" title="GitHub User: red">@red</a>;
+    }
+}
+.box2{
+    .title{
+        color:<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/red" title="GitHub User: red">@red</a>;
+    }
+}</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
