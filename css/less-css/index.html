@@ -835,6 +835,117 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#less_1" class="md-nav__link">
+    手动编译less
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#less_2" class="md-nav__link">
+    自动编译less
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    配置文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable" class="md-nav__link">
+    variable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extend" class="md-nav__link">
+    extend()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixin" class="md-nav__link">
+    mixin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    嵌套元素
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    条件语句
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    注释的写法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    变量名的组合
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    作用域
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    HTML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    变量插值
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -881,6 +992,117 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#less_1" class="md-nav__link">
+    手动编译less
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#less_2" class="md-nav__link">
+    自动编译less
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    配置文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable" class="md-nav__link">
+    variable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extend" class="md-nav__link">
+    extend()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixin" class="md-nav__link">
+    mixin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    嵌套元素
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    条件语句
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    注释的写法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    变量名的组合
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    作用域
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    HTML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    变量插值
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -897,31 +1119,35 @@
   <h1>Less</h1>
 
 <h2 id="less">安装less<a class="headerlink" href="#less" title="Permanent link">&para;</a></h2>
-<p><div class="highlight"><pre><span></span><code>$ npm install -g less
+<div class="highlight"><pre><span></span><code>$ npm install -g less
 </code></pre></div>
-手动编译less
+<h2 id="less_1">手动编译less<a class="headerlink" href="#less_1" title="Permanent link">&para;</a></h2>
+<p>第一步：创建style.less
 <div class="highlight"><pre><span></span><code>$ mkdir less-basic
 $ <span class="nb">cd</span> less-basic
 $ touch style.less <span class="c1">#less文件不能引入HTML文档，我们需要对它编译成常规css才可以</span>
-$ lessc styles.less <span class="c1"># less的编译器 编译到屏幕</span>
-$ lessc style.less style.css <span class="c1"># 编译到指定文件中</span>
 </code></pre></div>
-less文件：
+第二步：less文件内容：
 <div class="highlight"><pre><span></span><code><span class="nv">@background</span><span class="nt">-color</span><span class="o">:</span><span class="p">#</span><span class="nn">f4f4f4</span><span class="o">;</span><span class="w"></span>
 
 <span class="nt">body</span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="o">@</span><span class="k">background-color</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
+</code></pre></div>
+第三步：编译命令
+<div class="highlight"><pre><span></span><code>$ lessc styles.less <span class="c1"># less的编译器 编译到屏幕</span>
+$ lessc style.less style.css <span class="c1"># 编译到指定文件中</span>
 </code></pre></div></p>
-<p>自动编译less
-<div class="highlight"><pre><span></span><code><span class="o">$</span><span class="w"> </span><span class="nt">npm</span><span class="w"> </span><span class="nt">install</span><span class="w"> </span><span class="nt">-g</span><span class="w"> </span><span class="nt">less-watch-compiler</span><span class="w"></span>
-
-<span class="o">$</span><span class="w"> </span><span class="nt">less-watch-compiler</span><span class="w"> </span><span class="o">[</span><span class="nt">options</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="nt">source_dir</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="nt">destination_dir</span><span class="o">&gt;</span><span class="w"></span>
+<h2 id="less_2">自动编译less<a class="headerlink" href="#less_2" title="Permanent link">&para;</a></h2>
+<p><div class="highlight"><pre><span></span><code><span class="o">$</span><span class="w"> </span><span class="nt">npm</span><span class="w"> </span><span class="nt">install</span><span class="w"> </span><span class="nt">-g</span><span class="w"> </span><span class="nt">less-watch-compiler</span><span class="w"></span>
 
 <span class="err">#</span><span class="w"> </span><span class="nt">自动监控文件夹</span><span class="w"></span>
 <span class="o">$</span><span class="w"> </span><span class="nt">less-watch-compiler</span><span class="w"> </span><span class="nt">less</span><span class="w"> </span><span class="nt">css</span><span class="w"></span>
+</code></pre></div>
+语法：
+<div class="highlight"><pre><span></span><code>$ less-watch-compiler <span class="o">[</span>options<span class="o">]</span> &lt;source_dir&gt; &lt;destination_dir&gt;
 </code></pre></div></p>
-<p>配置文件
+<h2 id="_1">配置文件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>$ touch less-watch-compiler.config.json
 
 {
@@ -929,29 +1155,138 @@ less文件：
     &quot;outputFolder&quot;: &quot;dist&quot;,
     &quot;mainFile&quot;: &quot;main.less&quot;
 }
+</code></pre></div>
+<h2 id="variable">variable<a class="headerlink" href="#variable" title="Permanent link">&para;</a></h2>
+<ol>
+<li>变量使用@定义，用于存储常用值。</li>
+<li>变量可以存储颜色值、尺寸值等任意类型的值。</li>
+<li>变量值支持运算。</li>
+<li>变量值可以是变量。</li>
+<li>变量值支持函数。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nv">@black</span><span class="o">:</span><span class="p">#</span><span class="nn">010400</span><span class="o">;</span><span class="w"></span>
+<span class="nv">@gray</span><span class="o">:</span><span class="p">#</span><span class="nn">30332E</span><span class="o">;</span><span class="w"></span>
+<span class="nv">@light</span><span class="nt">-gray</span><span class="o">:</span><span class="p">#</span><span class="nn">f4f4f4</span><span class="o">;</span><span class="w"></span>
+<span class="nv">@white</span><span class="o">:</span><span class="p">#</span><span class="nn">FFFBFC</span><span class="o">;</span><span class="w"></span>
+<span class="nv">@cyan</span><span class="o">:</span><span class="p">#</span><span class="nn">62BBC1</span><span class="o">;</span><span class="w"></span>
+<span class="nv">@purple</span><span class="o">:</span><span class="p">#</span><span class="nn">EC058E</span><span class="o">;</span><span class="w"></span>
+<span class="nv">@line</span><span class="nt">-height</span><span class="p">:</span><span class="nd">1em</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nt">1em</span><span class="o">;</span><span class="w"></span>
+
+<span class="nv">@primary</span><span class="nt">-color</span><span class="o">:</span><span class="nv">@cyan</span><span class="o">;</span><span class="w"></span>
+<span class="nv">@secondary</span><span class="nt">-color</span><span class="o">:</span><span class="nv">@gray</span><span class="o">;</span><span class="w"></span>
+
+<span class="nv">@link</span><span class="nt">-color-dark</span><span class="o">:</span><span class="nv">@primary</span><span class="nt">-color</span><span class="o">;</span><span class="w"> </span>
+<span class="nv">@link</span><span class="nt">-color-dark-hover</span><span class="o">:</span><span class="w">  </span><span class="nt">darken</span><span class="o">(</span><span class="nv">@link</span><span class="nt">-color-dark</span><span class="o">,</span><span class="w"> </span><span class="nt">10</span><span class="o">%);</span><span class="w"></span>
+<span class="nv">@link</span><span class="nt">-color-light</span><span class="o">:</span><span class="nv">@white</span><span class="o">;</span><span class="w"> </span>
+<span class="nv">@link</span><span class="nt">-color-light-hover</span><span class="o">:</span><span class="w">  </span><span class="nt">darken</span><span class="o">(</span><span class="nv">@link</span><span class="nt">-color-light</span><span class="o">,</span><span class="w"> </span><span class="nt">20</span><span class="o">%);</span><span class="w"></span>
+
+<span class="nv">@full</span><span class="nt">-width</span><span class="p">:</span><span class="nd">100</span><span class="o">%;</span><span class="w"></span>
+<span class="nv">@fixed</span><span class="nt">-width</span><span class="p">:</span><span class="nd">1200px</span><span class="o">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="extend">extend()<a class="headerlink" href="#extend" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">btn</span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="mi">15</span><span class="kt">px</span><span class="w"> </span><span class="mi">65</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="nt">button</span><span class="p">:</span><span class="nd">extend</span><span class="o">(</span><span class="p">.</span><span class="nc">btn</span><span class="o">)</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="o">@</span><span class="kc">white</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="o">@</span><span class="n">primary-color</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">.border-radius(10px)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="mixin">mixin<a class="headerlink" href="#mixin" title="Permanent link">&para;</a></h2>
+<ol>
+<li>no perameters: </li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nt">img</span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="err">.bordered()</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">.</span><span class="nc">bordered</span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<ol>
+<li>with perameters: </li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nt">button</span><span class="p">:</span><span class="nd">extend</span><span class="o">(</span><span class="p">.</span><span class="nc">btn</span><span class="o">)</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="o">@</span><span class="kc">white</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="o">@</span><span class="n">primary-color</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">.border-radius(10px)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="p">.</span><span class="nc">border-radius</span><span class="o">(</span><span class="nv">@radius</span><span class="o">)</span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="o">@</span><span class="n">radius</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="_2">嵌套元素<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li>普通嵌套
+<div class="highlight"><pre><span></span><code><span class="nt">d</span><span class="w"></span>
+</code></pre></div></li>
+<li>&amp;表示平级，可设置伪类和兄弟元素</li>
+</ol>
+<p>伪类：
+<div class="highlight"><pre><span></span><code><span class="nt">a</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="err">&amp;:hover</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
-<p>使用方法：
-1. 嵌套
-2. &amp;符号 - 表示同级，如：伪类、多类
-3. 注释的写法： // 或 /* <em>/  区别：//不会被编译  /*</em>/会被编译
-4. @变量名  <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/width" title="GitHub User: width">@width</a>: 12;  width:<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/width" title="GitHub User: width">@width</a>:12 * 1px; || <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/width" title="GitHub User: width">@width</a>:12px
-HTML
-5. 变量名的组合：<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/width" title="GitHub User: width">@width</a>:1px; <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/style" title="GitHub User: style">@style</a>:solid; <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/color" title="GitHub User: color">@color</a>:red; <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/red" title="GitHub User: red">@red</a>:red; <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/blue" title="GitHub User: blue">@blue</a>:blue;
-.box{
-    border:<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/width" title="GitHub User: width">@width</a> <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/style" title="GitHub User: style">@style</a> <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/color" title="GitHub User: color">@color</a>;
-}
-6. 作用域：
-.box1{
-    <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/red" title="GitHub User: red">@red</a>:red;
-    .title{
-        color:<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/red" title="GitHub User: red">@red</a>;
-    }
-}
-.box2{
-    .title{
-        color:<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/red" title="GitHub User: red">@red</a>;
-    }
-}</p>
+<p>多类</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">box</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="err">&amp;.box1</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="_3">函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nt">lighter</span><span class="o">(</span><span class="nv">@primary</span><span class="nt">-color</span><span class="o">,</span><span class="w"> </span><span class="nt">50</span><span class="o">%)</span><span class="w"></span>
+<span class="nt">darken</span><span class="o">()</span><span class="w"></span>
+</code></pre></div>
+<h2 id="_4">条件语句<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">text-color</span><span class="o">(</span><span class="nv">@a</span><span class="o">)</span><span class="w"> </span><span class="nt">when</span><span class="w"> </span><span class="o">(</span><span class="nt">lightness</span><span class="o">(</span><span class="nv">@a</span><span class="o">)&gt;=</span><span class="nt">50</span><span class="o">%)</span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="kc">black</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">.</span><span class="nc">text-color</span><span class="o">(</span><span class="nv">@a</span><span class="o">)</span><span class="w"> </span><span class="nt">when</span><span class="w"> </span><span class="o">(</span><span class="nt">lightness</span><span class="o">(</span><span class="nv">@a</span><span class="o">)&lt;</span><span class="nt">50</span><span class="o">%)</span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="kc">white</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">.</span><span class="nc">primary-btn</span><span class="p">:</span><span class="nd">extend</span><span class="o">(</span><span class="p">.</span><span class="nc">btn</span><span class="o">)</span><span class="p">{</span><span class="w"></span>
+<span class="k">background-color</span><span class="p">:</span><span class="o">@</span><span class="n">primary-color</span><span class="p">;</span><span class="w"></span>
+<span class="err">.text-color(@primary-color)</span><span class="p">;</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="_5">注释的写法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="o">//</span><span class="nt">不会被编译</span><span class="w">  </span>
+<span class="c">/*会被编译*/</span><span class="w"></span>
+</code></pre></div>
+<h2 id="_6">变量名的组合<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nv">@width</span><span class="p">:</span><span class="nd">1px</span><span class="o">;</span><span class="w"> </span>
+<span class="nv">@style</span><span class="p">:</span><span class="nd">solid</span><span class="o">;</span><span class="w"> </span>
+<span class="nv">@color</span><span class="p">:</span><span class="nd">red</span><span class="o">;</span><span class="w"> </span>
+<span class="nv">@red</span><span class="p">:</span><span class="nd">red</span><span class="o">;</span><span class="w"> </span>
+<span class="nv">@blue</span><span class="p">:</span><span class="nd">blue</span><span class="o">;</span><span class="w"></span>
+<span class="p">.</span><span class="nc">box</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="o">@</span><span class="k">width</span><span class="w"> </span><span class="o">@</span><span class="kc">style</span><span class="w"> </span><span class="o">@</span><span class="kc">color</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="_7">作用域<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">box1</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">@</span><span class="n">red</span><span class="p">:</span><span class="kc">red</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">.title</span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">color</span><span class="p">:</span><span class="o">@</span><span class="kc">red</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">.</span><span class="nc">box2</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">.title</span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">color</span><span class="p">:</span><span class="o">@</span><span class="kc">red</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="html">HTML<a class="headerlink" href="#html" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
@@ -1019,6 +1354,13 @@ HTML
 <span class="w">    </span><span class="err">}</span><span class="w"></span>
 <span class="err">}</span><span class="w"></span>
 </code></pre></div></p>
+<h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h2>
+<p>在单个位置控制常用值。</p>
+<p>Overview</p>
+<p>在样式表中看到相同的值重复数十次甚至数百次的情况并不少见</p>
+<p>变量通过为您提供一种从单个位置控制这些值的方法，使您的代码更易于维护</p>
+<h3 id="_8">变量插值<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>上面的例子集中在使用变量来控制 CSS 规则中的值.但它们也可以在其他地方使用，例如选择器名称、属性名称、URL 和 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/import" title="GitHub User: import">@import</a> 语句</p>
 
               
             </article>
