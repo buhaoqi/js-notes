@@ -934,6 +934,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    布局
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    轮播图
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1011,6 +1025,20 @@
         <li class="md-nav__item">
   <a href="#less" class="md-nav__link">
     LESS部分
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    布局
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    轮播图
   </a>
   
 </li>
@@ -1258,6 +1286,143 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+<h2 id="_4">布局<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">轮播图<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>html
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="kd">const</span> <span class="nx">dpr</span> <span class="o">=</span> <span class="mf">1</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">devicePixelRatio</span>
+        <span class="kd">const</span> <span class="nx">meta</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;meta&#39;</span><span class="p">)</span>
+        <span class="nx">meta</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;viewport&quot;</span>
+        <span class="nx">meta</span><span class="p">.</span><span class="nx">content</span> <span class="o">=</span> <span class="sb">`width=device-width, initial-scale=</span><span class="si">${</span><span class="nx">dpr</span><span class="si">}</span><span class="sb">, maximum-scale=</span><span class="si">${</span><span class="nx">dpr</span><span class="si">}</span><span class="sb">,minimum-scale=</span><span class="si">${</span><span class="nx">dpr</span><span class="si">}</span><span class="sb">, user-scalable=0`</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">meta</span><span class="p">)</span>
+        <span class="kd">const</span> <span class="nx">html</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span>
+        <span class="nx">html</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontSize</span> <span class="o">=</span> <span class="nx">html</span><span class="p">.</span><span class="nx">clientWidth</span> <span class="o">/</span> <span class="mf">16</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;./css/style.css&quot;</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;top-menu&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;fa-solid fa-bars&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;top-search&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;search-form&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;top-i-jd&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;top-i-zoom&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;search&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;search-input&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;游戏主机&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;top-login&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>登录<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;slider-container&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;circle&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;slider1&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;slider-box&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/b1.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/b2.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/b3.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/b4.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/b5.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="cm">&lt;!-- &lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;./images/b1.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt; --&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;active&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;view&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;entry&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/i1.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>京东超市<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/i2.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>京东超市<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/i3.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>京东超市<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/i4.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>京东超市<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/i5.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>京东超市<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/i6.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>京东超市<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/i7.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>京东超市<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/i8.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>京东超市<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/i9.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>京东超市<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/i10.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>京东超市<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;nav-bar&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/app.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<p>JS
+<div class="highlight"><pre><span></span><code><span class="nx">mySlider</span><span class="p">()</span>
+<span class="kd">function</span> <span class="nx">mySlider</span><span class="p">(){</span>
+<span class="kd">const</span> <span class="nx">sliderClient</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#slider1&#39;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">sliderContainer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.slider-box&#39;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">dots</span> <span class="o">=</span> <span class="nx">sliderClient</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nx">n1</span> <span class="o">=</span> <span class="mf">0</span>
+<span class="kd">let</span> <span class="nx">n2</span> <span class="o">=</span> <span class="mf">0</span>
+<span class="kd">let</span> <span class="nx">imgWidth</span> <span class="o">=</span> <span class="nx">sliderClient</span><span class="p">.</span><span class="nx">offsetWidth</span>
+<span class="kd">let</span> <span class="nx">timer</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="kd">let</span> <span class="nx">iStartTouchX</span> <span class="o">=</span> <span class="mf">0</span> <span class="c1">//记录StartTouchX</span>
+<span class="kd">let</span> <span class="nx">iStartX</span> <span class="o">=</span> <span class="mf">0</span> <span class="c1">//记录当前StartX</span>
+<span class="nx">autoPlay</span><span class="p">()</span>
+<span class="kd">function</span> <span class="nx">autoPlay</span><span class="p">(){</span>
+    <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">n1</span><span class="o">++</span>
+        <span class="nx">n1</span> <span class="o">=</span> <span class="nx">n1</span><span class="o">%</span><span class="nx">dots</span><span class="p">.</span><span class="nx">length</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n1</span><span class="p">,</span><span class="nx">dots</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
+        <span class="nx">slider</span><span class="p">()</span>
+    <span class="p">},</span><span class="mf">2000</span><span class="p">)</span> 
+<span class="p">}</span>
+<span class="nx">sliderClient</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;touchstart&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+    <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">timer</span><span class="p">)</span>
+    <span class="c1">// alert(1)</span>
+    <span class="nx">ev</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">changedTouches</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="c1">// 手指列表，只记录一个</span>
+    <span class="nx">iStartTouchX</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">pageX</span>
+    <span class="nx">iStartX</span> <span class="o">=</span> <span class="nx">n2</span>
+<span class="p">})</span>
+<span class="c1">// document.addEventListener(&#39;touchmove&#39;,function(ev){</span>
+<span class="c1">//     ev.preventDefault()</span>
+<span class="c1">// })</span>
+<span class="nx">sliderClient</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;touchmove&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+    <span class="nx">sliderContainer</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transition</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span>
+    <span class="nx">ev</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">changedTouches</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
+    <span class="kd">let</span> <span class="nx">iDis</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">pageX</span> <span class="o">-</span> <span class="nx">iStartTouchX</span>
+    <span class="nx">n2</span> <span class="o">=</span> <span class="nx">iStartX</span> <span class="o">+</span> <span class="nx">iDis</span>
+    <span class="nx">sliderContainer</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">=</span> <span class="s1">&#39;translateX(&#39;</span><span class="o">+</span> <span class="nx">n2</span> <span class="o">+</span> <span class="s1">&#39;px)&#39;</span> 
+<span class="p">})</span>
+<span class="nx">sliderClient</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;touchend&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+    <span class="nx">n1</span> <span class="o">=</span> <span class="nx">n2</span> <span class="o">/</span> <span class="nx">imgWidth</span>
+    <span class="nx">n1</span> <span class="o">=</span> <span class="o">-</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">n1</span><span class="p">)</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">n1</span><span class="o">&lt;</span><span class="mf">0</span><span class="p">){</span>
+        <span class="nx">n1</span> <span class="o">=</span> <span class="mf">0</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">n1</span><span class="o">&gt;</span><span class="nx">dots</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mf">1</span><span class="p">){</span>
+        <span class="nx">n1</span> <span class="o">=</span> <span class="nx">dots</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mf">1</span>
+    <span class="p">}</span>
+    <span class="nx">slider</span><span class="p">()</span>
+    <span class="nx">autoPlay</span><span class="p">()</span>
+<span class="p">})</span>
+
+<span class="kd">function</span> <span class="nx">slider</span><span class="p">(){</span>
+    <span class="nx">n2</span> <span class="o">=</span> <span class="o">-</span><span class="nx">n1</span> <span class="o">*</span> <span class="nx">imgWidth</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n1</span><span class="p">,</span><span class="nx">n2</span><span class="p">)</span>
+    <span class="nx">sliderContainer</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transition</span> <span class="o">=</span> <span class="s1">&#39;0.5s&#39;</span>
+    <span class="nx">sliderContainer</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">=</span> <span class="s1">&#39;translateX(&#39;</span><span class="o">+</span> <span class="nx">n2</span> <span class="o">+</span> <span class="s1">&#39;px)&#39;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">dots</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="nx">dots</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">dots</span><span class="p">[</span><span class="nx">n1</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
 
               
             </article>
