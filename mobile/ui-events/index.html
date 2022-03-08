@@ -1433,88 +1433,91 @@
 </code></pre></div>
 <h2 id="_2">案例：通讯录<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>js
-<div class="highlight"><pre><span></span><code><span class="cm">/* 导航大小的自适应 */</span>
-<span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-  <span class="kd">var</span> <span class="nx">navList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.navList&#39;</span><span class="p">);</span>
-  <span class="kd">var</span> <span class="nx">nav</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#nav&#39;</span><span class="p">);</span>
-  <span class="kd">var</span> <span class="nx">scale</span> <span class="o">=</span> <span class="nx">nav</span><span class="p">.</span><span class="nx">clientHeight</span><span class="o">/</span><span class="nx">navList</span><span class="p">.</span><span class="nx">offsetHeight</span><span class="p">;</span>
-  <span class="nx">navList</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">WebkitTransform</span> <span class="o">=</span> <span class="nx">navList</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">=</span> <span class="s2">&quot;scale(&quot;</span><span class="o">+</span><span class="nx">scale</span><span class="o">+</span><span class="s2">&quot;)&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="c1">//右侧导航高度自适应</span>
+<span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">navList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.navList&quot;</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">nav</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#nav&quot;</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">scale</span> <span class="o">=</span> <span class="nx">nav</span><span class="p">.</span><span class="nx">clientHeight</span> <span class="o">/</span> <span class="nx">navList</span><span class="p">.</span><span class="nx">offsetHeight</span><span class="p">;</span>
+  <span class="nx">navList</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">WebkitTransform</span> <span class="o">=</span> <span class="nx">navList</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">=</span>
+    <span class="s2">&quot;scale(&quot;</span> <span class="o">+</span> <span class="nx">scale</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">;</span>
 <span class="p">})();</span>
 
-<span class="cm">/* 索引列表切换 */</span>
-<span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-  <span class="kd">var</span> <span class="nx">indexList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#indexList&#39;</span><span class="p">);</span>
-  <span class="kd">var</span> <span class="nx">navList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.navList&#39;</span><span class="p">);</span>
-  <span class="kd">var</span> <span class="nx">navs</span> <span class="o">=</span> <span class="nx">navList</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">);</span>
+<span class="c1">//总目标：点击导航按钮 跳转到对应位置</span>
+<span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">indexList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#indexList&quot;</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">navList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.navList&quot;</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">navs</span> <span class="o">=</span> <span class="nx">navList</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
 
   <span class="cm">/* 找到当前手指划过的是哪一个 */</span>
-  <span class="nx">navList</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;touchstart&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">getNav</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
-      <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+  <span class="nx">navList</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;touchstart&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">getNav</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+    <span class="c1">// e.preventDefault();</span>
   <span class="p">});</span>
-  <span class="nx">navList</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;touchmove&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">getNav</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+  <span class="nx">navList</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;touchmove&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">getNav</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
   <span class="p">});</span>
-  <span class="c1">// for(var i = 1; i &lt; navs.length; i++){</span>
-  <span class="c1">//     navs[i].addEventListener(&#39;touchstart&#39;, function(e) {</span>
-  <span class="c1">//         setNav(this);</span>
-  <span class="c1">//         toScroll(this);</span>
-  <span class="c1">//     });</span>
-  <span class="c1">// }</span>
-  <span class="cm">/* 找到手指划过时第几个 */</span>
-  <span class="kd">function</span> <span class="nx">getNav</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+
+  <span class="kd">function</span> <span class="nx">getNav</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//获取触摸点的视口Y坐标</span>
     <span class="kd">var</span> <span class="nx">pointY</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">changedTouches</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">clientY</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">navs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="c1">//根据li的长度获取到li的视口T坐标和B坐标</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">navs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//获取到li的矩形对象</span>
       <span class="kd">var</span> <span class="nx">rect</span> <span class="o">=</span> <span class="nx">navs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">getBoundingClientRect</span><span class="p">();</span>
-      <span class="k">if</span><span class="p">(</span><span class="nx">rect</span><span class="p">.</span><span class="nx">top</span> <span class="o">&lt;=</span> <span class="nx">pointY</span> <span class="o">&amp;&amp;</span> <span class="nx">rect</span><span class="p">.</span><span class="nx">bottom</span> <span class="o">&gt;=</span> <span class="nx">pointY</span><span class="p">){</span>
+      <span class="c1">//如果触摸点的Y坐标大于B小于T，就执行。。。</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">rect</span><span class="p">.</span><span class="nx">top</span> <span class="o">&lt;=</span> <span class="nx">pointY</span> <span class="o">&amp;&amp;</span> <span class="nx">rect</span><span class="p">.</span><span class="nx">bottom</span> <span class="o">&gt;=</span> <span class="nx">pointY</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//设置li的背景色</span>
         <span class="nx">setNav</span><span class="p">(</span><span class="nx">navs</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+        <span class="c1">//设置左侧列表滚动到顶部</span>
         <span class="nx">toScroll</span><span class="p">(</span><span class="nx">navs</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
         <span class="k">break</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
-  <span class="cm">/* 导航状态切换 */</span>
-  <span class="kd">function</span> <span class="nx">setNav</span><span class="p">(</span><span class="nx">index</span><span class="p">){</span>
-    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">navs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+  <span class="c1">//设置li的背景色</span>
+  <span class="kd">function</span> <span class="nx">setNav</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">navs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">navs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="nx">index</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">&quot;focus&quot;</span><span class="p">;</span>
   <span class="p">}</span>
-  <span class="cm">/* 找到选中的导航找到对应的dt */</span>
-  <span class="kd">function</span> <span class="nx">getOption</span><span class="p">(</span><span class="nx">index</span><span class="p">){</span>
-    <span class="kd">var</span> <span class="nx">dataId</span> <span class="o">=</span> <span class="nx">index</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">index</span><span class="p">;</span>
-    <span class="c1">//console.log(dataId);</span>
-    <span class="kd">var</span> <span class="nx">option</span> <span class="o">=</span> <span class="nx">indexList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;dt[data-id=&quot;&#39;</span><span class="o">+</span><span class="nx">dataId</span><span class="o">+</span><span class="s1">&#39;&quot;]&#39;</span><span class="p">);</span><span class="c1">//通过data属性找到对应dt</span>
-   <span class="c1">// console.log(option);</span>
-    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">option</span><span class="p">){</span> <span class="c1">//如果这个选项，没有对应的内容</span>
+
+<span class="c1">//根据坐标设置滚动条的滚动位置</span>
+<span class="kd">function</span> <span class="nx">toScroll</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span><span class="c1">//index:navs[i]</span>
+    <span class="c1">// 根据传入的navs[i]即点击的li元素找到对应的dt </span>
+    <span class="kd">var</span> <span class="nx">option</span> <span class="o">=</span> <span class="nx">getOption</span><span class="p">(</span><span class="nx">index</span><span class="p">);</span><span class="c1">//index:navs[i]</span>
+    <span class="c1">//根据传入的dt元素获取dt在页面中的Y坐标</span>
+    <span class="kd">var</span> <span class="nx">scrollY</span> <span class="o">=</span> <span class="nx">getOffsetY</span><span class="p">(</span><span class="nx">option</span><span class="p">);</span> <span class="c1">//option:dt</span>
+    <span class="c1">//根据坐标设置窗口的滚动位置</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">scrollTo</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="nx">scrollY</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">// 根据传入的点击li拿到对应的dt </span>
+  <span class="kd">function</span> <span class="nx">getOption</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span><span class="c1">//index:navs[i]</span>
+    <span class="c1">//通过navs[i]拿到navs[i]的data-index</span>
+    <span class="kd">var</span> <span class="nx">dataId</span> <span class="o">=</span> <span class="nx">index</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">index</span><span class="p">;</span><span class="c1">//index:navs[i]</span>
+    <span class="c1">//通过navs[i]的data-index拿到对应的dt</span>
+    <span class="kd">var</span> <span class="nx">option</span> <span class="o">=</span> <span class="nx">indexList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;dt[data-id=&quot;&#39;</span> <span class="o">+</span> <span class="nx">dataId</span> <span class="o">+</span> <span class="s1">&#39;&quot;]&#39;</span><span class="p">);</span> 
+    <span class="c1">// console.log(option);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">option</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">//如果这个选项，没有对应的内容</span>
       <span class="nx">index</span> <span class="o">=</span> <span class="nx">index</span><span class="p">.</span><span class="nx">nextElementSibling</span><span class="p">;</span>
-      <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">index</span><span class="p">){</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">//如果下一项不存在，说明已经到了列表的最后</span>
-        <span class="nx">option</span> <span class="o">=</span> <span class="nx">indexList</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;dt&#39;</span><span class="p">);</span>
-        <span class="nx">option</span> <span class="o">=</span> <span class="nx">option</span><span class="p">[</span><span class="nx">option</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mf">1</span><span class="p">];</span><span class="c1">//那当前对应的就是列表的最后一项</span>
+        <span class="nx">option</span> <span class="o">=</span> <span class="nx">indexList</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;dt&quot;</span><span class="p">);</span>
+        <span class="c1">//那当前对应的就是列表的最后一项</span>
+        <span class="nx">option</span> <span class="o">=</span> <span class="nx">option</span><span class="p">[</span><span class="nx">option</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mf">1</span><span class="p">];</span> 
       <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-         <span class="nx">option</span> <span class="o">=</span> <span class="nx">getOption</span><span class="p">(</span><span class="nx">index</span><span class="p">);</span><span class="c1">//如果下一项存在 就去找它下一项对应的选项</span>
+        <span class="c1">//如果下一项存在 就去找它下一项对应的选项</span>
+        <span class="nx">option</span> <span class="o">=</span> <span class="nx">getOption</span><span class="p">(</span><span class="nx">index</span><span class="p">);</span> 
       <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nx">option</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="cm">/* 根据找到的dt，计算出滚动条位置 */</span>
-  <span class="kd">function</span> <span class="nx">toScroll</span><span class="p">(</span><span class="nx">index</span><span class="p">){</span><span class="cm">/* 滚动至dt所在的位置 */</span>
-     <span class="kd">var</span> <span class="nx">option</span> <span class="o">=</span> <span class="nx">getOption</span><span class="p">(</span><span class="nx">index</span><span class="p">);</span>
-     <span class="kd">var</span> <span class="nx">scrollY</span> <span class="o">=</span> <span class="nx">getOffsetY</span><span class="p">(</span><span class="nx">option</span><span class="p">);</span><span class="c1">//获取dt在页面中的位置</span>
-     <span class="c1">//console.log(scrollY);</span>
-     <span class="nb">window</span><span class="p">.</span><span class="nx">scrollTo</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="nx">scrollY</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="cm">/* 获取元素在页面中的位置*/</span>
-  <span class="kd">function</span> <span class="nx">getOffsetY</span><span class="p">(</span><span class="nx">el</span><span class="p">){</span>
-    <span class="c1">// var top = 0;</span>
-    <span class="c1">// while(el){</span>
-    <span class="c1">//   top += el.offsetTop;//元素和定位父级之间的距离</span>
-    <span class="c1">//   el = el.offsetParent;</span>
-    <span class="c1">// }</span>
+<span class="c1">//根据传入的dt元素获取dt在页面中的Y坐标</span>
+  <span class="kd">function</span> <span class="nx">getOffsetY</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">scrollY</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">scrollY</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">rectY</span> <span class="o">=</span> <span class="nx">el</span><span class="p">.</span><span class="nx">getBoundingClientRect</span><span class="p">().</span><span class="nx">top</span><span class="p">;</span>
     <span class="k">return</span> <span class="nx">scrollY</span> <span class="o">+</span> <span class="nx">rectY</span><span class="p">;</span>
