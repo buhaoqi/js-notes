@@ -2175,8 +2175,66 @@ css
 <span class="w">    </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">scale</span><span class="p">(</span><span class="mf">0.9</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="w"> </span><span class="mi">40</span><span class="kt">px</span><span class="w"> </span><span class="mi">-1</span><span class="kt">px</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--shadow</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
+</code></pre></div>
+js新
+<div class="highlight"><pre><span></span><code><span class="c1">//获取三张片子的父级容器：slider = slide + slide + slide</span>
+<span class="kd">const</span> <span class="nx">slider</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.slider-container&#39;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">slides</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">slider</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;.slide&#39;</span><span class="p">))</span>
+<span class="kd">let</span> <span class="nx">lastPos</span> <span class="o">=</span> <span class="mf">0</span>
+<span class="kd">let</span> <span class="nx">currentPos</span> <span class="o">=</span> <span class="mf">0</span>
+
+<span class="kd">let</span> <span class="nx">currentTranslate</span> <span class="o">=</span> <span class="mf">0</span>
+<span class="kd">let</span> <span class="nx">lastTranslate</span> <span class="o">=</span> <span class="mf">0</span>
+
+<span class="kd">let</span> <span class="nx">currentIndex</span> <span class="o">=</span> <span class="mf">0</span>
+<span class="kd">let</span> <span class="nx">animationID</span> <span class="o">=</span> <span class="mf">0</span>
+<span class="kd">let</span> <span class="nx">isDrag</span> <span class="o">=</span> <span class="kc">false</span>
+
+<span class="c1">//为单个slide批量添加事件</span>
+<span class="nx">slides</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">slide</span><span class="p">,</span><span class="nx">index</span><span class="p">)=&gt;{</span>
+    <span class="nx">slide</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;touchstart&#39;</span><span class="p">,</span><span class="nx">touchStart</span><span class="p">(</span><span class="nx">index</span><span class="p">))</span>
+    <span class="nx">slide</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;touchmove&#39;</span><span class="p">,</span><span class="nx">touchMove</span><span class="p">)</span>
+    <span class="nx">slide</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;touchend&#39;</span><span class="p">,</span><span class="nx">touchEnd</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="kd">function</span> <span class="nx">touchStart</span><span class="p">(</span><span class="nx">index</span><span class="p">){</span>
+    <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+        <span class="nx">lastPos</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">touches</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">clientX</span>
+        <span class="nx">currentIndex</span> <span class="o">=</span> <span class="nx">index</span>
+        <span class="nx">isDrag</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="nx">animationID</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">cb</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">touchMove</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">isDrag</span><span class="p">){</span>
+        <span class="c1">//当前slider的位置</span>
+        <span class="nx">currentPos</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">touches</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">clientX</span>
+        <span class="c1">//当前slider过度到哪里</span>
+        <span class="nx">currentTranslate</span> <span class="o">=</span> <span class="nx">currentPos</span> <span class="o">-</span> <span class="nx">lastPos</span> <span class="o">+</span> <span class="nx">lastTranslate</span>
+        <span class="c1">//下面必须在结束处理</span>
+        <span class="c1">// lastTranslate = currentTranslate</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">touchEnd</span><span class="p">(){</span>
+    <span class="nx">isDrag</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="nx">cancelAnimationFrame</span><span class="p">(</span><span class="nx">animationID</span><span class="p">)</span>
+
+    <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span>  <span class="nx">currentTranslate</span> <span class="o">-</span> <span class="nx">lastTranslate</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">100</span> <span class="o">&amp;&amp;</span> <span class="nx">currentIndex</span> <span class="o">&lt;</span> <span class="nx">slides</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span><span class="mf">1</span><span class="p">)</span>  
+    <span class="nx">currentIndex</span><span class="o">++</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">result</span> <span class="o">&gt;</span> <span class="mf">100</span> <span class="o">&amp;&amp;</span> <span class="nx">currentIndex</span><span class="o">&gt;</span><span class="mf">0</span> <span class="p">)</span> <span class="nx">currentIndex</span><span class="o">--</span>
+
+    <span class="nx">currentTranslate</span> <span class="o">=</span> <span class="nx">currentIndex</span> <span class="o">*</span> <span class="o">-</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span>
+    <span class="nx">slider</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">=</span> <span class="sb">`translateX(</span><span class="si">${</span><span class="nx">currentTranslate</span><span class="si">}</span><span class="sb">px)`</span>
+    <span class="nx">lastTranslate</span> <span class="o">=</span> <span class="nx">currentTranslate</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">cb</span><span class="p">(){</span>
+    <span class="nx">slider</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">=</span> <span class="sb">`translateX(</span><span class="si">${</span><span class="nx">currentTranslate</span><span class="si">}</span><span class="sb">px)`</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">isDrag</span><span class="p">)</span> <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">cb</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre></div></p>
-<p>js
+<p>js旧
 <div class="highlight"><pre><span></span><code><span class="c1">//获取元素</span>
 <span class="kd">const</span> <span class="nx">slider</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.slider-container&#39;</span><span class="p">)</span>
 <span class="kd">const</span> <span class="nx">slides</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;.slide&#39;</span><span class="p">))</span>
