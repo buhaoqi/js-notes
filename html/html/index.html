@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#canvas" class="md-skip">
+        <a href="#artboard" class="md-skip">
           跳转至
         </a>
       
@@ -909,6 +909,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#artboard" class="md-nav__link">
+    artboard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ball" class="md-nav__link">
+    ball
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#char" class="md-nav__link">
+    char
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#canvas" class="md-nav__link">
     Canvas是什么
   </a>
@@ -1052,6 +1073,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#artboard" class="md-nav__link">
+    artboard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ball" class="md-nav__link">
+    ball
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#char" class="md-nav__link">
+    char
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#canvas" class="md-nav__link">
     Canvas是什么
   </a>
@@ -1094,6 +1136,244 @@
 
   <h1>html</h1>
 
+<h2 id="artboard">artboard<a class="headerlink" href="#artboard" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>ArtBoard<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="o">*</span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="nt">body</span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#555</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">#</span><span class="nn">canvas</span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">border</span><span class="p">:</span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#000</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#fff</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;canvas&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;canvas&#39;</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">)</span>
+
+    <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span>
+    <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span>
+
+    <span class="kd">let</span> <span class="nx">painting</span> <span class="o">=</span> <span class="kc">false</span>
+
+    <span class="nx">canvas</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mousedown&#39;</span><span class="p">,</span><span class="nx">startPosition</span><span class="p">)</span>
+    <span class="nx">canvas</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mouseup&#39;</span><span class="p">,</span><span class="nx">finishedPosition</span><span class="p">)</span>
+    <span class="nx">canvas</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mousemove&#39;</span><span class="p">,</span><span class="nx">draw</span><span class="p">)</span>
+
+    <span class="kd">function</span> <span class="nx">startPosition</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+        <span class="nx">painting</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="nx">draw</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="kd">function</span> <span class="nx">finishedPosition</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+        <span class="nx">painting</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="kd">function</span> <span class="nx">draw</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">painting</span><span class="p">)</span> <span class="k">return</span>
+        <span class="c1">// ctx.beginPath()</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineWidth</span> <span class="o">=</span> <span class="mf">10</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineCap</span> <span class="o">=</span> <span class="s1">&#39;round&#39;</span>
+
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">clientX</span><span class="p">,</span><span class="nx">e</span><span class="p">.</span><span class="nx">clientY</span><span class="p">)</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">stroke</span><span class="p">()</span>
+    <span class="p">}</span>   
+<span class="p">})</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="ball">ball<a class="headerlink" href="#ball" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="o">*</span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="nt">body</span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#555</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">#</span><span class="nn">canvas</span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;canvas&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;400&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;400&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#canvas&#39;</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">circle</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">x</span><span class="o">:</span><span class="mf">200</span><span class="p">,</span>
+        <span class="nx">y</span><span class="o">:</span><span class="mf">200</span><span class="p">,</span>
+        <span class="nx">r</span><span class="o">:</span><span class="mf">30</span><span class="p">,</span>
+        <span class="nx">dx</span><span class="o">:</span><span class="mf">5</span><span class="p">,</span>
+        <span class="nx">dy</span><span class="o">:</span><span class="mf">4</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">drawCircle</span><span class="p">(){</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">()</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">circle</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span><span class="nx">circle</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span><span class="nx">circle</span><span class="p">.</span><span class="nx">r</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">*</span><span class="mf">2</span><span class="p">)</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s1">&#39;pink&#39;</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">fill</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">update</span><span class="p">(){</span>
+        <span class="c1">//在指定的矩形区域内清除像素，x,y矩形的起始点</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">clearRect</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
+        <span class="nx">drawCircle</span><span class="p">()</span>
+        <span class="nx">circle</span><span class="p">.</span><span class="nx">x</span> <span class="o">+=</span> <span class="nx">circle</span><span class="p">.</span><span class="nx">dx</span>
+        <span class="nx">circle</span><span class="p">.</span><span class="nx">y</span> <span class="o">+=</span> <span class="nx">circle</span><span class="p">.</span><span class="nx">dy</span>
+        <span class="c1">//detect side walls</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">circle</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">circle</span><span class="p">.</span><span class="nx">r</span> <span class="o">&gt;</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">||</span><span class="nx">circle</span><span class="p">.</span><span class="nx">x</span> <span class="o">-</span> <span class="nx">circle</span><span class="p">.</span><span class="nx">r</span> <span class="o">&lt;</span> <span class="mf">0</span><span class="p">){</span>
+            <span class="nx">circle</span><span class="p">.</span><span class="nx">dx</span> <span class="o">=</span> <span class="nx">circle</span><span class="p">.</span><span class="nx">dx</span> <span class="o">*</span> <span class="o">-</span><span class="mf">1</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">circle</span><span class="p">.</span><span class="nx">y</span> <span class="o">+</span> <span class="nx">circle</span><span class="p">.</span><span class="nx">r</span> <span class="o">&gt;</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">||</span> <span class="nx">circle</span><span class="p">.</span><span class="nx">y</span> <span class="o">-</span> <span class="nx">circle</span><span class="p">.</span><span class="nx">r</span> <span class="o">&lt;</span> <span class="mf">0</span><span class="p">){</span>
+            <span class="nx">circle</span><span class="p">.</span><span class="nx">dy</span> <span class="o">=</span> <span class="nx">circle</span><span class="p">.</span><span class="nx">dy</span> <span class="o">*</span> <span class="o">-</span><span class="mf">1</span>
+        <span class="p">}</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">update</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">update</span><span class="p">()</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="char">char<a class="headerlink" href="#char" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="o">*</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">          </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">          </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="nt">canvas</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#fff</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#555</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">#</span><span class="nn">source</span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;canvas&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;char2.png&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;source&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="kd">const</span> <span class="nx">image</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#source&#39;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;canvas&quot;</span><span class="p">);</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">;</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s2">&quot;2d&quot;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">player</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">w</span><span class="o">:</span> <span class="mf">50</span><span class="p">,</span>
+    <span class="nx">h</span><span class="o">:</span> <span class="mf">70</span><span class="p">,</span>
+    <span class="nx">x</span><span class="o">:</span> <span class="mf">20</span><span class="p">,</span>
+    <span class="nx">y</span><span class="o">:</span> <span class="mf">200</span><span class="p">,</span>
+    <span class="nx">speed</span><span class="o">:</span> <span class="mf">5</span><span class="p">,</span>
+    <span class="nx">dx</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
+    <span class="nx">dy</span><span class="o">:</span> <span class="mf">0</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">drawPlayer</span><span class="p">(){</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">drawImage</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="nx">player</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span><span class="nx">player</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span><span class="nx">player</span><span class="p">.</span><span class="nx">w</span><span class="p">,</span><span class="nx">player</span><span class="p">.</span><span class="nx">h</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">clear</span><span class="p">(){</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">clearRect</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">newPos</span><span class="p">(){</span>
+    <span class="nx">player</span><span class="p">.</span><span class="nx">x</span> <span class="o">+=</span> <span class="nx">player</span><span class="p">.</span><span class="nx">dx</span>
+    <span class="nx">player</span><span class="p">.</span><span class="nx">y</span> <span class="o">+=</span> <span class="nx">player</span><span class="p">.</span><span class="nx">dy</span>
+    <span class="nx">detectWalls</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">detectWalls</span><span class="p">(){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="mf">0</span><span class="p">)</span> <span class="nx">player</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mf">0</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">player</span><span class="p">.</span><span class="nx">w</span> <span class="o">&gt;</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">)</span> <span class="nx">player</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">-</span> <span class="nx">player</span><span class="p">.</span><span class="nx">w</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">y</span> <span class="o">&lt;</span> <span class="mf">0</span><span class="p">)</span> <span class="nx">player</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mf">0</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">y</span> <span class="o">+</span> <span class="nx">player</span><span class="p">.</span><span class="nx">h</span> <span class="o">&gt;</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span> <span class="nx">player</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">-</span> <span class="nx">player</span><span class="p">.</span><span class="nx">h</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">update</span><span class="p">(){</span>
+    <span class="nx">clear</span><span class="p">()</span>
+    <span class="nx">drawPlayer</span><span class="p">()</span>
+    <span class="nx">newPos</span><span class="p">()</span>
+    <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">update</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">moveUp</span><span class="p">(){</span>
+    <span class="nx">player</span><span class="p">.</span><span class="nx">dy</span> <span class="o">=</span>  <span class="o">-</span> <span class="nx">player</span><span class="p">.</span><span class="nx">speed</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">moveDown</span><span class="p">(){</span>
+    <span class="nx">player</span><span class="p">.</span><span class="nx">dy</span> <span class="o">=</span>  <span class="nx">player</span><span class="p">.</span><span class="nx">speed</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">moveLeft</span><span class="p">(){</span>
+    <span class="nx">player</span><span class="p">.</span><span class="nx">dx</span> <span class="o">=</span>  <span class="o">-</span> <span class="nx">player</span><span class="p">.</span><span class="nx">speed</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">moveRight</span><span class="p">(){</span>
+    <span class="nx">player</span><span class="p">.</span><span class="nx">dx</span> <span class="o">=</span>  <span class="nx">player</span><span class="p">.</span><span class="nx">speed</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">keyDown</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="s1">&#39;ArrowRight&#39;</span> <span class="o">||</span> <span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="s1">&#39;Right&#39;</span><span class="p">){</span>
+        <span class="nx">moveRight</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="s1">&#39;ArrowLeft&#39;</span> <span class="o">||</span> <span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="s1">&#39;Left&#39;</span><span class="p">){</span>
+        <span class="nx">moveLeft</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="s1">&#39;ArrowUp&#39;</span> <span class="o">||</span> <span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="s1">&#39;Up&#39;</span><span class="p">){</span>
+        <span class="nx">moveUp</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="s1">&#39;ArrowDown&#39;</span> <span class="o">||</span> <span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="s1">&#39;Down&#39;</span><span class="p">){</span>
+        <span class="nx">moveDown</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">keyUp</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span>
+    <span class="k">if</span><span class="p">(</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">==</span> <span class="s1">&#39;Right&#39;</span> <span class="o">||</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">==</span> <span class="s1">&#39;ArrowRight&#39;</span><span class="o">||</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">==</span> <span class="s1">&#39;Left&#39;</span> <span class="o">||</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">==</span> <span class="s1">&#39;ArrowLeft&#39;</span> <span class="o">||</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">==</span> <span class="s1">&#39;Up&#39;</span> <span class="o">||</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">==</span> <span class="s1">&#39;ArrowUp&#39;</span><span class="o">||</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">==</span> <span class="s1">&#39;Down&#39;</span> <span class="o">||</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">==</span> <span class="s1">&#39;ArrowDown&#39;</span>
+    <span class="p">){</span>
+        <span class="nx">player</span><span class="p">.</span><span class="nx">dx</span> <span class="o">=</span> <span class="mf">0</span>
+        <span class="nx">player</span><span class="p">.</span><span class="nx">dy</span> <span class="o">=</span> <span class="mf">0</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">update</span><span class="p">()</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;keydown&#39;</span><span class="p">,</span><span class="nx">keyDown</span><span class="p">)</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;keyup&#39;</span><span class="p">,</span><span class="nx">keyUp</span><span class="p">)</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
 <h2 id="canvas">Canvas是什么<a class="headerlink" href="#canvas" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>&lt;canvas&gt;</code>是HTML的一个标签。</li>
