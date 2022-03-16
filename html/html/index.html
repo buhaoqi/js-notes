@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#artboard" class="md-skip">
+        <a href="#rectangle" class="md-skip">
           跳转至
         </a>
       
@@ -909,6 +909,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#rectangle" class="md-nav__link">
+    Rectangle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#line" class="md-nav__link">
+    Line
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canvasrenderingcontext2dsave" class="md-nav__link">
+    CanvasRenderingContext2D.save()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    解构赋值
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathtan2api" class="md-nav__link">
+    案例Math.tan2()API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    三角函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    弧度与角度转换公式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    箭头类
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#artboard" class="md-nav__link">
     artboard
   </a>
@@ -937,7 +993,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     定义画布
   </a>
   
@@ -951,7 +1007,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     笑脸填色
   </a>
   
@@ -1073,6 +1129,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#rectangle" class="md-nav__link">
+    Rectangle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#line" class="md-nav__link">
+    Line
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canvasrenderingcontext2dsave" class="md-nav__link">
+    CanvasRenderingContext2D.save()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    解构赋值
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathtan2api" class="md-nav__link">
+    案例Math.tan2()API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    三角函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    弧度与角度转换公式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    箭头类
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#artboard" class="md-nav__link">
     artboard
   </a>
@@ -1101,7 +1213,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     定义画布
   </a>
   
@@ -1115,7 +1227,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     笑脸填色
   </a>
   
@@ -1136,6 +1248,335 @@
 
   <h1>html</h1>
 
+<h2 id="rectangle">Rectangle<a class="headerlink" href="#rectangle" title="Permanent link">&para;</a></h2>
+<p>ctx.fillRect(x,y,w,h)</p>
+<h2 id="line">Line<a class="headerlink" href="#line" title="Permanent link">&para;</a></h2>
+<p>至少需要4步</p>
+<div class="highlight"><pre><span></span><code><span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">()</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">0</span><span class="p">)</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="mf">50</span><span class="p">,</span><span class="mf">50</span><span class="p">)</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="mf">60</span><span class="p">,</span><span class="mf">80</span><span class="p">)</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">closePath</span><span class="p">()</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">stroke</span><span class="p">()</span>
+
+<span class="sb">````</span>
+
+<span class="err">##</span> <span class="nx">Arc</span><span class="o">/</span><span class="nx">Circle</span>
+
+<span class="nx">至少需要3步</span>
+
+<span class="sb">```javascript</span>
+<span class="sb">ctx.beginPath()</span>
+<span class="sb">ctx.arc(x,y,r,startDeg,endDeg,false)</span>
+<span class="sb">ctx.stroke()</span>
+
+<span class="sb">````</span>
+
+<span class="sb">## for loop</span>
+
+<span class="sb">```</span><span class="nx">html</span>
+<span class="o">&lt;</span><span class="nx">canvas</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;canvas&quot;</span> <span class="nx">width</span><span class="o">=</span><span class="s2">&quot;400&quot;</span> <span class="nx">height</span><span class="o">=</span><span class="s2">&quot;400&quot;</span><span class="o">&gt;&lt;</span><span class="err">/canvas&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#canvas&#39;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">)</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="mf">3</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span>
+    <span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span>
+    <span class="kd">let</span> <span class="nx">r</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="o">/</span><span class="mf">10</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">()</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">,</span><span class="nx">r</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="mf">2</span><span class="p">,</span><span class="kc">false</span><span class="p">)</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">stroke</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="o">&lt;</span><span class="err">/script&gt;</span>
+</code></pre></div>
+<h2 id="canvasrenderingcontext2dsave">CanvasRenderingContext2D.save()<a class="headerlink" href="#canvasrenderingcontext2dsave" title="Permanent link">&para;</a></h2>
+<p><code>CanvasRenderingContext2D.save()</code>是Canvas 2D API通过将当前状态放入栈中，保存Canvas全部状态的方法。</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;canvas&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s2">&quot;2d&quot;</span><span class="p">);</span>
+
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span> <span class="c1">// 保存默认的状态</span>
+
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span><span class="p">;</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span> <span class="mf">10</span><span class="p">,</span> <span class="mf">100</span><span class="p">,</span> <span class="mf">100</span><span class="p">);</span>
+
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span> <span class="c1">// 还原到上次保存的默认状态</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mf">150</span><span class="p">,</span> <span class="mf">75</span><span class="p">,</span> <span class="mf">100</span><span class="p">,</span> <span class="mf">100</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="_1">解构赋值<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>解构赋值是ES2015中提出的一种新语法。</li>
+<li>该语法是关于js表达式的语法</li>
+<li>通过结构定义变量，快速拿到数组或对象的值</li>
+</ul>
+<p>用法1：直接把数组的值提取出来赋值给结构变量。
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">]</span>
+<span class="c1">// const a = arr[0]</span>
+<span class="c1">// const b = arr[1]</span>
+<span class="c1">// const c = arr[2]</span>
+
+<span class="kd">const</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">)</span>
+<span class="sb">````</span>
+
+<span class="nx">用法2</span><span class="err">：</span><span class="nx">直接把对象的属性提取出来赋值给解构变量</span><span class="err">。</span>
+<span class="sb">```javascript</span>
+<span class="sb">const obj = {</span>
+<span class="sb">    name: &#39;zhangsan&#39;,</span>
+<span class="sb">    age: 29,</span>
+<span class="sb">    gender: &#39;male&#39;</span>
+<span class="sb">}</span>
+
+<span class="sb">// const name = obj.name</span>
+<span class="sb">// const age = obj.age</span>
+<span class="sb">// const gender = obj.gender</span>
+
+<span class="sb">const {name,age,gender} = obj</span>
+<span class="sb">console.log(name,age,gender)</span>
+<span class="sb">````</span>
+
+<span class="sb">用法3：剩余参数</span>
+
+<span class="sb">```</span><span class="nx">javascript</span>
+<span class="c1">//剩余参数：将不定数量的参数表示为一个数组</span>
+<span class="kd">const</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">7</span><span class="p">,</span><span class="mf">8</span><span class="p">,</span><span class="mf">9</span><span class="p">,</span><span class="mf">10</span><span class="p">]</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">,...</span><span class="nx">num</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(...</span><span class="nx">num</span><span class="p">)</span>
+<span class="sb">````</span>
+
+<span class="err">##</span> <span class="nx">工具函数getMousePos</span><span class="p">()</span>
+
+<span class="sb">```html</span>
+<span class="sb">&lt;canvas id=&quot;canvas&quot;&gt;&lt;/canvas&gt;</span>
+<span class="sb">&lt;script&gt;</span>
+<span class="sb">let C = {}</span>
+<span class="sb">C.getMousePos = function(ele){</span>
+<span class="sb">    let mouse = {x: 0, y: 0}</span>
+<span class="sb">    ele.addEventListener(&#39;mousemove&#39;,function(ev){</span>
+<span class="sb">        let {pageX, pageY, target} = ev</span>
+<span class="sb">        let {left, top} = target.getBoundingClientRect()</span>
+<span class="sb">        mouse.x = pageX - left</span>
+<span class="sb">        mouse.y = pageY - top</span>
+<span class="sb">    })</span>
+<span class="sb">    return mouse</span>
+<span class="sb">}</span>
+
+<span class="sb">const canvas = document.querySelector(&#39;#canvas&#39;)</span>
+<span class="sb">const ctx = canvas.getContext(&#39;2d&#39;)</span>
+<span class="sb">let W = canvas.width = 800</span>
+<span class="sb">let H = canvas.height = 600</span>
+
+<span class="sb">let mouse = C.getElePos(canvas)</span>
+
+<span class="sb">canvas.onclick = function(){</span>
+<span class="sb">    console.log(mouse.x,mouse.y)</span>
+<span class="sb">}</span>
+<span class="sb">&lt;/script&gt;</span>
+</code></pre></div></p>
+<h2 id="mathtan2api">案例Math.tan2()API<a class="headerlink" href="#mathtan2api" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>案例Math.tan2()API<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="p">#</span><span class="nn">canvas</span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./utils.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;canvas&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#canvas&#39;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nx">W</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="mf">800</span>
+<span class="kd">let</span> <span class="nx">H</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="mf">600</span>
+<span class="c1">//获取鼠标坐标</span>
+<span class="kd">let</span> <span class="nx">mouse</span> <span class="o">=</span> <span class="nx">C</span><span class="p">.</span><span class="nx">getElePos</span><span class="p">(</span><span class="nx">canvas</span><span class="p">)</span>
+
+<span class="c1">//创建坐标系</span>
+<span class="nx">createAxis</span><span class="p">()</span>
+<span class="c1">//为画布注册mousemove事件处理函数</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mousemove&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">clearRect</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="nx">W</span><span class="p">,</span><span class="nx">H</span><span class="p">)</span>
+    <span class="c1">//求对边与邻边的角度</span>
+    <span class="kd">let</span> <span class="nx">dx</span> <span class="o">=</span> <span class="nx">mouse</span><span class="p">.</span><span class="nx">x</span> <span class="o">-</span> <span class="nx">W</span><span class="o">/</span><span class="mf">2</span>
+    <span class="kd">let</span> <span class="nx">dy</span> <span class="o">=</span> <span class="nx">mouse</span><span class="p">.</span><span class="nx">y</span> <span class="o">-</span> <span class="nx">H</span><span class="o">/</span><span class="mf">2</span>
+    <span class="c1">//Math.atan(弧度)</span>
+    <span class="c1">// let angle = Math.atan(dy/dx) * 180/Math.PI</span>
+    <span class="c1">//Math.atan2(对边,临边)</span>
+    <span class="kd">let</span> <span class="nx">angle</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">atan2</span><span class="p">(</span><span class="nx">dy</span><span class="p">,</span><span class="nx">dx</span><span class="p">)</span> <span class="o">*</span> <span class="mf">180</span><span class="o">/</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span>
+
+    <span class="nx">createAxis</span><span class="p">()</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">()</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="nx">mouse</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span><span class="nx">mouse</span><span class="p">.</span><span class="nx">y</span><span class="p">)</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="nx">W</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="nx">H</span><span class="o">/</span><span class="mf">2</span><span class="p">)</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">stroke</span><span class="p">()</span>
+
+    <span class="c1">//绘制文字</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">font</span> <span class="o">=</span> <span class="s1">&#39;30px arial&#39;</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillText</span><span class="p">(</span><span class="nx">angle</span><span class="p">,</span><span class="nx">mouse</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span><span class="nx">mouse</span><span class="p">.</span><span class="nx">y</span><span class="p">)</span>
+
+<span class="p">})</span>
+<span class="c1">//createAxis()函数</span>
+<span class="kd">function</span> <span class="nx">createAxis</span><span class="p">(){</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineWidth</span> <span class="o">=</span> <span class="mf">2</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">()</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="nx">H</span><span class="o">/</span><span class="mf">2</span><span class="p">)</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="nx">W</span><span class="p">,</span><span class="nx">H</span><span class="o">/</span><span class="mf">2</span><span class="p">)</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="nx">W</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="mf">0</span><span class="p">)</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="nx">W</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="nx">H</span><span class="p">)</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">stroke</span><span class="p">()</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">restore</span><span class="p">()</span>
+<span class="p">}</span>
+
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nb">Math</span><span class="p">)</span>
+
+
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="_2">三角函数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>三角函数描述的是夹角与边的关系</p>
+<p>三角函数
+- sin()
+- cos()
+- tan()
+- arcsin()
+- arccos()
+- arctan()</p>
+<h2 id="_3">弧度与角度转换公式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nx">C</span><span class="p">.</span><span class="nx">toRadian</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">angle</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">angle</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">/</span><span class="mf">180</span>
+<span class="p">}</span>
+
+<span class="nx">C</span><span class="p">.</span><span class="nx">toAngle</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">radian</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">radian</span> <span class="o">*</span> <span class="mf">180</span><span class="o">/</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span>
+<span class="p">}</span>
+<span class="sb">````</span>
+
+<span class="err">##</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="nx">props</span><span class="p">)</span>
+
+<span class="o">-</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">()</span> <span class="nx">方法用于将所有可枚举属性的值从一个源对象分配到目标对象</span><span class="err">。</span> 
+<span class="o">-</span> <span class="nx">它将返回目标对象</span><span class="err">。</span>
+
+<span class="sb">```javascript</span>
+<span class="sb">const obj1 = { a: 1, b: 2 };</span>
+<span class="sb">const obj2 = { b: 4, c: 5 };</span>
+<span class="sb">//把obj2复制给obj1，返回obj2</span>
+<span class="sb">const obj3 = Object.assign(obj1, obj2);</span>
+
+<span class="sb">console.log(target);</span>
+<span class="sb">// expected output: Object { a: 1, b: 4, c: 5 }</span>
+
+<span class="sb">console.log(obj3);</span>
+<span class="sb">// expected output: Object { a: 1, b: 4, c: 5 }</span>
+</code></pre></div>
+<h2 id="_4">箭头类<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>arrow.js</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nx">Arrow</span><span class="p">{</span>
+    <span class="kr">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">w</span> <span class="o">=</span> <span class="mf">60</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">h</span> <span class="o">=</span> <span class="mf">30</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">rotation</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">fillStroke</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">;</span>
+        <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="nx">props</span><span class="p">)</span>
+        <span class="k">return</span> <span class="k">this</span>
+    <span class="p">}</span>
+    <span class="nx">createPath</span><span class="p">(</span><span class="nx">ctx</span><span class="p">){</span>
+        <span class="kd">let</span> <span class="p">{</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">()</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="o">-</span><span class="nx">w</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="o">-</span><span class="nx">h</span><span class="o">/</span><span class="mf">2</span><span class="p">)</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="nx">w</span><span class="o">/</span><span class="mf">10</span><span class="p">,</span><span class="o">-</span><span class="nx">h</span><span class="o">/</span><span class="mf">2</span><span class="p">)</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="nx">w</span><span class="o">/</span><span class="mf">10</span><span class="p">,</span><span class="o">-</span><span class="nx">h</span><span class="p">)</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="nx">w</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="mf">0</span><span class="p">)</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="nx">w</span><span class="o">/</span><span class="mf">10</span><span class="p">,</span><span class="nx">h</span><span class="p">)</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="nx">w</span><span class="o">/</span><span class="mf">10</span><span class="p">,</span><span class="nx">h</span><span class="o">/</span><span class="mf">2</span><span class="p">)</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="o">-</span><span class="nx">w</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="nx">h</span><span class="o">/</span><span class="mf">2</span><span class="p">)</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">closePath</span><span class="p">()</span>
+        <span class="k">return</span> <span class="k">this</span>
+    <span class="p">}</span>
+    <span class="nx">render</span><span class="p">(</span><span class="nx">ctx</span><span class="p">){</span>
+        <span class="kd">let</span> <span class="p">{</span><span class="nx">fillStyle</span><span class="p">,</span><span class="nx">strokeStyle</span><span class="p">,</span><span class="nx">rotation</span><span class="p">,</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">}</span> <span class="o">=</span> <span class="k">this</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="nx">fillStyle</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">strokeStyle</span> <span class="o">=</span> <span class="nx">strokeStyle</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">translate</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">)</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">rotate</span><span class="p">(</span><span class="nx">rotation</span><span class="p">)</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">createPath</span><span class="p">(</span><span class="nx">ctx</span><span class="p">)</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">fill</span><span class="p">()</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">stroke</span><span class="p">()</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">restore</span><span class="p">()</span>
+        <span class="k">return</span> <span class="k">this</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="sb">````</span>
+
+
+<span class="err">##</span> <span class="nx">案例</span><span class="err">：</span><span class="nx">旋转的箭头</span>
+
+<span class="sb">```html</span>
+<span class="sb">&lt;!DOCTYPE html&gt;</span>
+<span class="sb">&lt;html lang=&quot;en&quot;&gt;</span>
+<span class="sb">&lt;head&gt;</span>
+<span class="sb">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<span class="sb">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span>
+<span class="sb">    &lt;title&gt;案例旋转的箭头&lt;/title&gt;</span>
+<span class="sb">    &lt;script src=&quot;./utils.js&quot;&gt;&lt;/script&gt;</span>
+<span class="sb">    &lt;script src=&quot;./arrow.js&quot;&gt;&lt;/script&gt;</span>
+<span class="sb">    &lt;style&gt;</span>
+<span class="sb">        body{</span>
+<span class="sb">            margin: 0;</span>
+<span class="sb">            background-color: #eee;</span>
+<span class="sb">        }</span>
+<span class="sb">        #canvas{</span>
+<span class="sb">            box-shadow: 0 0 10px black;</span>
+<span class="sb">        }</span>
+<span class="sb">    &lt;/style&gt;</span>
+<span class="sb">&lt;/head&gt;</span>
+<span class="sb">&lt;body&gt;</span>
+<span class="sb">    &lt;canvas id=&quot;canvas&quot;&gt;&lt;/canvas&gt;</span>
+<span class="sb">    &lt;script&gt;</span>
+<span class="sb">        const canvas = document.querySelector(&#39;#canvas&#39;)</span>
+<span class="sb">        const ctx = canvas.getContext(&#39;2d&#39;)</span>
+<span class="sb">        let W = canvas.width = 800</span>
+<span class="sb">        let H = canvas.height = 600</span>
+<span class="sb">        let mouse = C.getMousePos(canvas)</span>
+<span class="sb">        const arrow1 = new Arrow({</span>
+<span class="sb">            x: W/2,</span>
+<span class="sb">            y: H/2,</span>
+<span class="sb">            w: 180,</span>
+<span class="sb">            h: 60</span>
+<span class="sb">        }).render(ctx)</span>
+
+<span class="sb">        canvas.addEventListener(&#39;mousemove&#39;,function(){</span>
+<span class="sb">            let dx = mouse.x - arrow1.x</span>
+<span class="sb">            let dy = mouse.y - arrow1.y</span>
+<span class="sb">            arrow1.rotation = Math.atan2(dy,dx)</span>
+<span class="sb">            ctx.clearRect(0,0,W,H)</span>
+<span class="sb">            arrow1.render(ctx)</span>
+<span class="sb">        })</span>
+<span class="sb">    &lt;/script&gt;</span>
+<span class="sb">&lt;/body&gt;</span>
+<span class="sb">&lt;/html&gt;</span>
+
+<span class="sb">&lt;/script&gt;</span>
+<span class="sb">&lt;/body&gt;</span>
+<span class="sb">&lt;/html&gt;</span>
+</code></pre></div>
 <h2 id="artboard">artboard<a class="headerlink" href="#artboard" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -1386,7 +1827,7 @@
 </li>
 <li><code>&lt;canvas&gt;</code>画布上可以绘图，但是只能使用js绘图。</li>
 </ul>
-<h2 id="_1">定义画布<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_5">定义画布<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>必须指定<code>id</code>，<code>width</code>,<code>height</code>属性。可以使用css增加边框。
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;myCanvas&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;200&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;border:1px solid #000000;&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
@@ -1466,7 +1907,7 @@
 
     <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
-<h2 id="_2">笑脸填色<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_6">笑脸填色<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#mycanvas&#39;</span><span class="p">)</span>
 <span class="kd">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">)</span>
 <span class="c1">//大圆</span>
