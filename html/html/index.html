@@ -937,6 +937,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#getmousepos" class="md-nav__link">
+    工具函数getMousePos()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mathtan2api" class="md-nav__link">
     案例Math.tan2()API
   </a>
@@ -1157,6 +1164,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#getmousepos" class="md-nav__link">
+    工具函数getMousePos()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mathtan2api" class="md-nav__link">
     案例Math.tan2()API
   </a>
@@ -1308,7 +1322,7 @@
 <li>该语法是关于js表达式的语法</li>
 <li>通过结构定义变量，快速拿到数组或对象的值</li>
 </ul>
-<p>用法1：直接把数组的值提取出来赋值给结构变量。
+<p>用法1：直接把数组的值提取出来赋值给结构变量。</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">]</span>
 <span class="c1">// const a = arr[0]</span>
 <span class="c1">// const b = arr[1]</span>
@@ -1316,63 +1330,58 @@
 
 <span class="kd">const</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">)</span>
+</code></pre></div>
+<p>用法2：直接把对象的属性提取出来赋值给解构变量。
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;zhangsan&#39;</span><span class="p">,</span>
+    <span class="nx">age</span><span class="o">:</span> <span class="mf">29</span><span class="p">,</span>
+    <span class="nx">gender</span><span class="o">:</span> <span class="s1">&#39;male&#39;</span>
+<span class="p">}</span>
+
+<span class="c1">// const name = obj.name</span>
+<span class="c1">// const age = obj.age</span>
+<span class="c1">// const gender = obj.gender</span>
+
+<span class="kd">const</span> <span class="p">{</span><span class="nx">name</span><span class="p">,</span><span class="nx">age</span><span class="p">,</span><span class="nx">gender</span><span class="p">}</span> <span class="o">=</span> <span class="nx">obj</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="nx">age</span><span class="p">,</span><span class="nx">gender</span><span class="p">)</span>
 <span class="sb">````</span>
 
-<span class="nx">用法2</span><span class="err">：</span><span class="nx">直接把对象的属性提取出来赋值给解构变量</span><span class="err">。</span>
+<span class="nx">用法3</span><span class="err">：</span><span class="nx">剩余参数</span>
+
 <span class="sb">```javascript</span>
-<span class="sb">const obj = {</span>
-<span class="sb">    name: &#39;zhangsan&#39;,</span>
-<span class="sb">    age: 29,</span>
-<span class="sb">    gender: &#39;male&#39;</span>
-<span class="sb">}</span>
-
-<span class="sb">// const name = obj.name</span>
-<span class="sb">// const age = obj.age</span>
-<span class="sb">// const gender = obj.gender</span>
-
-<span class="sb">const {name,age,gender} = obj</span>
-<span class="sb">console.log(name,age,gender)</span>
-<span class="sb">````</span>
-
-<span class="sb">用法3：剩余参数</span>
-
-<span class="sb">```</span><span class="nx">javascript</span>
-<span class="c1">//剩余参数：将不定数量的参数表示为一个数组</span>
-<span class="kd">const</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">7</span><span class="p">,</span><span class="mf">8</span><span class="p">,</span><span class="mf">9</span><span class="p">,</span><span class="mf">10</span><span class="p">]</span>
-<span class="kd">const</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">,...</span><span class="nx">num</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr2</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(...</span><span class="nx">num</span><span class="p">)</span>
-<span class="sb">````</span>
-
-<span class="err">##</span> <span class="nx">工具函数getMousePos</span><span class="p">()</span>
-
-<span class="sb">```html</span>
-<span class="sb">&lt;canvas id=&quot;canvas&quot;&gt;&lt;/canvas&gt;</span>
-<span class="sb">&lt;script&gt;</span>
-<span class="sb">let C = {}</span>
-<span class="sb">C.getMousePos = function(ele){</span>
-<span class="sb">    let mouse = {x: 0, y: 0}</span>
-<span class="sb">    ele.addEventListener(&#39;mousemove&#39;,function(ev){</span>
-<span class="sb">        let {pageX, pageY, target} = ev</span>
-<span class="sb">        let {left, top} = target.getBoundingClientRect()</span>
-<span class="sb">        mouse.x = pageX - left</span>
-<span class="sb">        mouse.y = pageY - top</span>
-<span class="sb">    })</span>
-<span class="sb">    return mouse</span>
-<span class="sb">}</span>
-
-<span class="sb">const canvas = document.querySelector(&#39;#canvas&#39;)</span>
-<span class="sb">const ctx = canvas.getContext(&#39;2d&#39;)</span>
-<span class="sb">let W = canvas.width = 800</span>
-<span class="sb">let H = canvas.height = 600</span>
-
-<span class="sb">let mouse = C.getElePos(canvas)</span>
-
-<span class="sb">canvas.onclick = function(){</span>
-<span class="sb">    console.log(mouse.x,mouse.y)</span>
-<span class="sb">}</span>
-<span class="sb">&lt;/script&gt;</span>
+<span class="sb">//剩余参数：将不定数量的参数表示为一个数组</span>
+<span class="sb">const arr2 = [1,2,3,4,5,6,7,8,9,10]</span>
+<span class="sb">const [a,b,c,...num] = arr2</span>
+<span class="sb">console.log(a,b,c)</span>
+<span class="sb">console.log(...num)</span>
 </code></pre></div></p>
+<h2 id="getmousepos">工具函数getMousePos()<a class="headerlink" href="#getmousepos" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;canvas&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="kd">let</span> <span class="nx">C</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nx">C</span><span class="p">.</span><span class="nx">getMousePos</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ele</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">mouse</span> <span class="o">=</span> <span class="p">{</span><span class="nx">x</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mf">0</span><span class="p">}</span>
+    <span class="nx">ele</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mousemove&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+        <span class="kd">let</span> <span class="p">{</span><span class="nx">pageX</span><span class="p">,</span> <span class="nx">pageY</span><span class="p">,</span> <span class="nx">target</span><span class="p">}</span> <span class="o">=</span> <span class="nx">ev</span>
+        <span class="kd">let</span> <span class="p">{</span><span class="nx">left</span><span class="p">,</span> <span class="nx">top</span><span class="p">}</span> <span class="o">=</span> <span class="nx">target</span><span class="p">.</span><span class="nx">getBoundingClientRect</span><span class="p">()</span>
+        <span class="nx">mouse</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">pageX</span> <span class="o">-</span> <span class="nx">left</span>
+        <span class="nx">mouse</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">pageY</span> <span class="o">-</span> <span class="nx">top</span>
+    <span class="p">})</span>
+    <span class="k">return</span> <span class="nx">mouse</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#canvas&#39;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nx">W</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="mf">800</span>
+<span class="kd">let</span> <span class="nx">H</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="mf">600</span>
+
+<span class="kd">let</span> <span class="nx">mouse</span> <span class="o">=</span> <span class="nx">C</span><span class="p">.</span><span class="nx">getElePos</span><span class="p">(</span><span class="nx">canvas</span><span class="p">)</span>
+
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mouse</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span><span class="nx">mouse</span><span class="p">.</span><span class="nx">y</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
 <h2 id="mathtan2api">案例Math.tan2()API<a class="headerlink" href="#mathtan2api" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
