@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#eyes-follows-mouse" class="md-skip">
           跳转至
         </a>
       
@@ -909,6 +909,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#eyes-follows-mouse" class="md-nav__link">
+    案例：EYES Follows Mouse
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     三角函数
   </a>
@@ -1157,6 +1164,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#eyes-follows-mouse" class="md-nav__link">
+    案例：EYES Follows Mouse
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     三角函数
   </a>
@@ -1304,6 +1318,135 @@
 
   <h1>html</h1>
 
+<h2 id="eyes-follows-mouse">案例：EYES Follows Mouse<a class="headerlink" href="#eyes-follows-mouse" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="o">*</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="p">#</span><span class="nn">canvas</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translate</span><span class="p">(</span><span class="mi">25</span><span class="kt">%</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="kt">%</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;canvas&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;500&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;400&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#canvas&#39;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nx">w</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="mf">500</span>
+<span class="kd">let</span> <span class="nx">h</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="mf">400</span>
+<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">/</span> <span class="mf">2</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">/</span> <span class="mf">2</span>
+
+<span class="kd">let</span> <span class="nx">faceX</span> <span class="o">=</span> <span class="nx">x</span>
+<span class="kd">let</span> <span class="nx">faceY</span> <span class="o">=</span> <span class="nx">y</span>
+<span class="kd">let</span> <span class="nx">faceR</span> <span class="o">=</span> <span class="mf">40</span>
+
+<span class="kd">let</span> <span class="nx">eyeR</span> <span class="o">=</span> <span class="mf">12</span>
+<span class="kd">let</span> <span class="nx">eyeDX</span> <span class="o">=</span> <span class="p">(</span><span class="nx">eyeR</span> <span class="o">/</span> <span class="mf">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">9</span>
+<span class="kd">let</span> <span class="nx">eyeY</span> <span class="o">=</span> <span class="nx">faceY</span> <span class="o">-</span> <span class="mf">8</span>
+
+<span class="kd">let</span> <span class="nx">eyeBallR</span> <span class="o">=</span> <span class="mf">3</span>
+<span class="kd">let</span> <span class="nx">eyeBallMoveR</span> <span class="o">=</span> <span class="mf">5</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">eyeBallRY</span> <span class="o">=</span> <span class="nx">eyeY</span>
+<span class="kd">let</span> <span class="nx">eyeBallLY</span> <span class="o">=</span> <span class="nx">eyeY</span>
+<span class="kd">let</span> <span class="nx">eyeBallRX</span> <span class="o">=</span> <span class="nx">faceX</span> <span class="o">+</span> <span class="p">(</span><span class="nx">eyeBallR</span> <span class="o">/</span> <span class="mf">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">14</span>
+<span class="kd">let</span> <span class="nx">eyeBallLX</span> <span class="o">=</span> <span class="nx">faceX</span> <span class="o">-</span> <span class="p">(</span><span class="nx">eyeBallR</span> <span class="o">/</span> <span class="mf">2</span><span class="p">)</span> <span class="o">-</span> <span class="mf">14</span>
+
+<span class="kd">let</span> <span class="nx">eyeBallRX2</span> <span class="o">=</span> <span class="nx">eyeBallRX</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">eyeBallRY2</span> <span class="o">=</span> <span class="nx">eyeBallRY</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">eyeBallLX2</span> <span class="o">=</span> <span class="nx">eyeBallLX</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">eyeBallLY2</span> <span class="o">=</span> <span class="nx">eyeBallLY</span><span class="p">;</span>
+
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mousemove&#39;</span><span class="p">,</span> <span class="nx">mouseMove</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
+<span class="nx">drawScreen</span><span class="p">()</span>
+<span class="nx">drawEyeBall</span><span class="p">()</span>
+
+<span class="kd">function</span> <span class="nx">drawScreen</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">()</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">faceX</span><span class="p">,</span> <span class="nx">faceY</span><span class="p">,</span> <span class="nx">faceR</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">2</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fill</span><span class="p">()</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">stroke</span><span class="p">()</span>
+
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">()</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">faceX</span> <span class="o">-</span> <span class="nx">eyeDX</span><span class="p">,</span> <span class="nx">eyeY</span><span class="p">,</span> <span class="nx">eyeR</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">2</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fill</span><span class="p">()</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">stroke</span><span class="p">()</span>
+
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">()</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">faceX</span> <span class="o">+</span> <span class="nx">eyeDX</span><span class="p">,</span> <span class="nx">eyeY</span><span class="p">,</span> <span class="nx">eyeR</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">2</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fill</span><span class="p">()</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">stroke</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">drawEyeBall</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">()</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">eyeBallRX2</span><span class="p">,</span><span class="nx">eyeBallRY2</span><span class="p">,</span><span class="nx">eyeBallR</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">2</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">,</span><span class="kc">false</span><span class="p">)</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fill</span><span class="p">()</span>
+
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">()</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">eyeBallLX2</span><span class="p">,</span><span class="nx">eyeBallLY2</span><span class="p">,</span><span class="nx">eyeBallR</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">2</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">,</span><span class="kc">false</span><span class="p">)</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fill</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">mouseMove</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">mouseX</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">pageX</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">offsetLeft</span> <span class="o">-</span> <span class="nx">faceX</span>
+    <span class="kd">let</span> <span class="nx">mouseY</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">pageY</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">offsetTop</span> <span class="o">-</span> <span class="nx">eyeY</span>
+
+    <span class="kd">let</span> <span class="nx">ratioX</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">mouseX</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">mouseX</span><span class="p">)</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">mouseY</span><span class="p">))</span>
+    <span class="kd">let</span> <span class="nx">ratioY</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">mouseY</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">mouseX</span><span class="p">)</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">mouseY</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">mouseX</span> <span class="o">&gt;</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">eyeBallRX2</span> <span class="o">=</span> <span class="nx">eyeBallRX</span> <span class="o">+</span> <span class="p">(</span><span class="nx">ratioX</span> <span class="o">*</span> <span class="nx">eyeBallMoveR</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">eyeBallRX2</span> <span class="o">=</span> <span class="nx">eyeBallRX</span> <span class="o">-</span> <span class="p">(</span><span class="nx">ratioX</span> <span class="o">*</span> <span class="nx">eyeBallMoveR</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">mouseY</span> <span class="o">&gt;</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">eyeBallRY2</span> <span class="o">=</span> <span class="nx">eyeBallRY</span> <span class="o">+</span> <span class="p">(</span><span class="nx">ratioY</span> <span class="o">*</span> <span class="nx">eyeBallMoveR</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">eyeBallRY2</span> <span class="o">=</span> <span class="nx">eyeBallRY</span> <span class="o">-</span> <span class="p">(</span><span class="nx">ratioY</span> <span class="o">*</span> <span class="nx">eyeBallMoveR</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">mouseX</span> <span class="o">&gt;</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">eyeBallLX2</span> <span class="o">=</span> <span class="nx">eyeBallLX</span> <span class="o">+</span> <span class="p">(</span><span class="nx">ratioX</span> <span class="o">*</span> <span class="nx">eyeBallMoveR</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">eyeBallLX2</span> <span class="o">=</span> <span class="nx">eyeBallLX</span> <span class="o">-</span> <span class="p">(</span><span class="nx">ratioX</span> <span class="o">*</span> <span class="nx">eyeBallMoveR</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">mouseY</span> <span class="o">&gt;</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">eyeBallLY2</span> <span class="o">=</span> <span class="nx">eyeBallLY</span> <span class="o">+</span> <span class="p">(</span><span class="nx">ratioY</span> <span class="o">*</span> <span class="nx">eyeBallMoveR</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">eyeBallLY2</span> <span class="o">=</span> <span class="nx">eyeBallLY</span> <span class="o">-</span> <span class="p">(</span><span class="nx">ratioY</span> <span class="o">*</span> <span class="nx">eyeBallMoveR</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">clearRect</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+    <span class="nx">drawScreen</span><span class="p">();</span>
+    <span class="nx">drawEyeBall</span><span class="p">();</span>
+<span class="p">}</span>
+
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
 <h2 id="_1">三角函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>三角函数描述的是夹角与边的关系</p>
 <p>三角函数
